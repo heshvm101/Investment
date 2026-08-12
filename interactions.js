@@ -5,7 +5,40 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ---- 1) ظهور تدريجي للمحتوى مع السكرول ----
+  // ---- 1) إمالة 3D خفيفة جدًا (زاوية صغيرة + throttling) عشان تتحرك من غير ما تزغلل النص ----
+  const tiltEls = document.querySelectorAll('.session-card, .flow-panel, .box');
+  const MAX_TILT_DEG = 2.5; // زاوية صغيرة عمدًا: كل ما الزاوية أكبر كل ما الـ blur وقت الحركة أوضح
+  tiltEls.forEach(el => {
+    let ticking = false;
+    let lastEvent = null;
+
+    el.addEventListener('mouseenter', () => {
+      el.classList.add('is-tilting'); // بيوقف انتقال الـ transform وقت الحركة عشان تفضل الاستجابة فورية ونظيفة
+    });
+
+    el.addEventListener('mousemove', (e) => {
+      lastEvent = e;
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const r = el.getBoundingClientRect();
+        const cx = (lastEvent.clientX - r.left) - r.width / 2;
+        const cy = (lastEvent.clientY - r.top) - r.height / 2;
+        const rotateX = (-cy / r.height) * MAX_TILT_DEG;
+        const rotateY = (cx / r.width) * MAX_TILT_DEG;
+        el.style.transform =
+          `perspective(1400px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px) translateZ(0)`;
+        ticking = false;
+      });
+    });
+
+    el.addEventListener('mouseleave', () => {
+      el.classList.remove('is-tilting'); // برجع الانتقال السلس عشان يرجع لوضعه الطبيعي بنعومة
+      el.style.transform = '';
+    });
+  });
+
+  // ---- 2) ظهور تدريجي للمحتوى مع السكرول ----
   // ملاحظة: بنستخدم ">" عشان الفقرات والقوائم اللي جوه صندوق (.box) أو كارت
   // تتحرك مع المربع بتاعها كوحدة واحدة، مش كل سطر لوحده
   const revealTargets = document.querySelectorAll(
@@ -28,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealTargets.forEach(el => el.classList.add('in'));
   }
 
-  // ---- 2) شريط تقدم القراءة أعلى الصفحة ----
+  // ---- 3) شريط تقدم القراءة أعلى الصفحة ----
   const progressFill = document.getElementById('progress-fill');
   function updateProgress(){
     if(!progressFill) return;
@@ -39,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     progressFill.style.width = pct + '%';
   }
 
-  // ---- 3) مؤشر متحرك بجانب فهرس السايدبار (بيتبع الرابط النشط) ----
+  // ---- 4) مؤشر متحرك بجانب فهرس السايدبار (بيتبع الرابط النشط) ----
   const sideList = document.querySelector('.side-list');
   let sideIndicator = null;
   if (sideList) {
