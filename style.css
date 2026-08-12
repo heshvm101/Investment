@@ -165,16 +165,22 @@ a{ color: inherit; }
 /* ---------- التيكر بيقف عند الهوفر ---------- */
 .ticker-wrap:hover .ticker-track{ animation-play-state: paused; }
 
-/* ---------- رفعة نضيفة عند الهوفر للكروت والصناديق (من غير أي دوران 3D) ---------- */
+/* ---------- رفعة عند الهوفر للكروت والصناديق + تجهيز لطبقة GPU (لتقليل الزغللة وقت الحركة) ---------- */
 .session-card, .flow-panel, .box{
   transition: transform .2s ease, background .18s ease, border-color .18s ease, box-shadow .2s ease;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 .session-card:hover, .flow-panel:hover, .box:hover{
-  transform: translateY(-5px);
+  transform: translateY(-5px) translateZ(0);
 }
 .session-card:hover{ box-shadow: 0 18px 40px -18px rgba(201,162,39,.45); }
 .flow-panel:hover{ box-shadow: 0 18px 40px -18px rgba(201,162,39,.3); border-color: var(--gold-soft); }
 .box:hover{ box-shadow: 0 14px 30px -16px rgba(0,0,0,.5); border-color: var(--gold-soft); }
+.session-card.is-tilting, .flow-panel.is-tilting, .box.is-tilting{
+  transition: box-shadow .2s ease, border-color .18s ease, background .18s ease;
+}
 
 /* ---------- ظهور تدريجي مع السكرول ---------- */
 .reveal{
