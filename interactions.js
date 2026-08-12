@@ -5,9 +5,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ---- 1) ظهور تدريجي للمحتوى مع السكرول (بيشمل الفقرات والقوائم كمان دلوقتي) ----
+  // ---- 1) ظهور تدريجي للمحتوى مع السكرول ----
+  // ملاحظة: بنستخدم ">" عشان الفقرات والقوائم اللي جوه صندوق (.box) أو كارت
+  // تتحرك مع المربع بتاعها كوحدة واحدة، مش كل سطر لوحده
   const revealTargets = document.querySelectorAll(
-    '.content h2, .content h3, .content .lede, .content p, .content ul, .content ol, .content table, ' +
+    '.content > h2, .content > h3, .content > .lede, .content > p, .content > ul, .content > ol, .content > table, ' +
     '.box, .flow-panel, .session-card, .gterm, .hero-stats .stat, .flow-news'
   );
   revealTargets.forEach(el => el.classList.add('reveal'));
