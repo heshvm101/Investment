@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>قاموس المصطلحات | دفتر البورصة والاستثمار</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span><span class="dot">●</span> GLOSSARY</span>
+    <span>60 مصطلح ومتزود</span>
+    <span class="up">مركزي</span>
+    <span>مش متكرر بين السيشنز</span>
+    <span class="down">متراكم مع كل سيشن</span>
+    <!-- تكرار -->
+    <span><span class="dot">●</span> GLOSSARY</span>
+    <span>60 مصطلح ومتزود</span>
+    <span class="up">مركزي</span>
+    <span>مش متكرر بين السيشنز</span>
+    <span class="down">متراكم مع كل سيشن</span>
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">هش.بورصة</span>
+      <span class="brand-name">دفتر البورصة والاستثمار</span>
+      <span class="brand-sub">SESSION LOG · EGX</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="session-01.html">السيشنز</a>
+      <a href="glossary.html" class="active">القاموس</a>
+    </nav>
+  </div>
+  <div class="progress-fill" id="progress-fill"></div>
+</div>
+
+<div class="shell">
+  <div class="hero" style="padding-top:2.2rem;">
+    <div class="hero-eyebrow">قاموس مركزي · متراكم</div>
+    <h1>كل مصطلح ظهر في أي سيشن، بتعريف واحد ثابت</h1>
+    <p class="lead">مش هتلاقي نفس المصطلح متعرّف بشكل مختلف في كل سيشن. هنا التعريف النهائي، ومكتوب جنبه من أنهي سيشن جه، عشان لو حبيت ترجع للسياق الكامل.</p>
+  </div>
+
+  <div class="content" style="max-width: 900px;">
+    <input type="text" id="search" class="glossary-search" placeholder="دور بالعربي أو بالإنجليزي… مثلًا: Settlement أو تسوية">
+
+    <div id="terms"></div>
+  </div>
+</div>
+
+<footer>
+  قاموس متراكم — بيتزود مع كل سيشن جديدة
+</footer>
+
+<script src="interactions.js"></script>
+<script>
+const terms = [
+  {en:"Stock / Share", ar:"سهم", def:"يمثل ملكية جزئية في شركة. لو الشركة مقسّمة لعدد معين من الأسهم وامتلكت واحد منهم، بقيت مالك جزء فعلي منها.", src:"SESSION 01"},
+  {en:"Bond", ar:"سند", def:"أداة دين. لما تشتريه إنت بتقرض الجهة المصدرة (شركة أو حكومة) فلوس مقابل عائد متفق عليه، وإنت دائن مش مالك.", src:"SESSION 01"},
+  {en:"Treasury Bill", ar:"إذن خزانة", def:"أداة دين حكومية قصيرة الأجل (3-9 شهور غالبًا). شكل من أشكال إقراض الحكومة.", src:"SESSION 01"},
+  {en:"ETF (Exchange-Traded Fund)", ar:"وثيقة صندوق مؤشر", def:"أداة استثمارية بتضم مجموعة أسهم أو تتبع مؤشر معين، بتديك تعرض لمجموعة شركات بدل شركة واحدة.", src:"SESSION 01"},
+  {en:"Financial Security", ar:"ورقة مالية", def:"المصطلح الشامل لأي أداة قابلة للتداول في البورصة: سهم، سند، أو وثيقة صندوق.", src:"SESSION 01"},
+  {en:"Stock Exchange", ar:"البورصة", def:"السوق المنظم اللي بيتم فيه تداول الأوراق المالية وفق قواعد محددة. مختلف عن شركة السمسرة اللي بتوصلك ليه.", src:"SESSION 01"},
+  {en:"Stock Market", ar:"سوق الأسهم", def:"المصطلح الأوسع لسوق تداول الأوراق المالية، وأحيانًا بيُستخدم بالتبادل مع Stock Exchange في الكلام اليومي.", src:"SESSION 01"},
+  {en:"Broker / Brokerage Firm", ar:"وسيط / شركة سمسرة", def:"الجهة اللي بتوصلك للبورصة وتنفذ أوامر البيع والشراء بتاعتك مقابل عمولة. مثال: Thndr، EFG Hermes، Mubasher. الوسيط مش هو البورصة نفسها.", src:"SESSION 01"},
+  {en:"Capital Gain", ar:"ربح رأسمالي", def:"الفرق الإيجابي بين سعر البيع وسعر الشراء. يتحول لربح فعلي (Realized) لما تبيع بس، وقبل كده هو ربح غير محقق (Unrealized).", src:"SESSION 01"},
+  {en:"Dividend", ar:"توزيعات أرباح", def:"جزء من أرباح الشركة بتوزعه على المساهمين. الشركة مش ملزمة توزع كل أرباحها، ممكن تحتفظ بيها لإعادة الاستثمار.", src:"SESSION 01"},
+  {en:"Market Price", ar:"سعر السوق", def:"السعر الفعلي اللي بيتداول بيه السهم، وبيتحدد أساسًا بالعرض والطلب، وأيضًا بالتوقعات والأخبار والسيولة.", src:"SESSION 01"},
+  {en:"Par Value / Nominal Value", ar:"القيمة الاسمية", def:"قيمة قانونية محاسبية للسهم عند الإصدار، وهي مختلفة تمامًا عن سعر السوق الفعلي.", src:"SESSION 01"},
+  {en:"Market Capitalization", ar:"القيمة السوقية", def:"عدد أسهم الشركة القائمة مضروبة في سعر السهم الحالي. مقياس لحجم الشركة، مش لجودتها.", src:"SESSION 01"},
+  {en:"Primary Market", ar:"السوق الأولي", def:"المرحلة اللي فيها الشركة نفسها بتصدر وتطرح أسهم جديدة وتاخد التمويل مباشرة من المستثمرين.", src:"SESSION 01"},
+  {en:"Secondary Market", ar:"السوق الثانوي", def:"تداول الأسهم بين المستثمرين بعضهم البعض بعد الطرح الأول. الشركة مش بتاخد فلوس من كل صفقة تحصل هنا.", src:"SESSION 01"},
+  {en:"IPO", ar:"الطرح العام الأولي", def:"أول مرة تطرح فيها الشركة أسهمها للجمهور للتداول العام.", src:"SESSION 01"},
+  {en:"Settlement", ar:"التسوية", def:"إجراءات إتمام نقل الملكية والتسوية المالية الكاملة للصفقة، بعد تنفيذها. تاخد فترة زمنية ومختلفة عن التنفيذ نفسه.", src:"SESSION 01"},
+  {en:"Execution", ar:"التنفيذ", def:"لحظة تنفيذ أمر البيع أو الشراء فعليًا في نظام البورصة. أول خطوة قبل التسوية.", src:"SESSION 01"},
+  {en:"Unified Code", ar:"الكود الموحد", def:"رقم تعريف خاص بالمستثمر داخل منظومة سوق المال، بيربط ملكياته وتعاملاته. ليس الرقم القومي.", src:"SESSION 01"},
+  {en:"Investor", ar:"مستثمر", def:"عنده خطة وسبب واضح للدخول، عارف داخل فين وبكام، وأفق زمني أطول غالبًا من المتداول أو المضارب.", src:"SESSION 01"},
+  {en:"Trader", ar:"متداول", def:"أفق زمني أقصر من المستثمر، بيعتمد بشكل أكبر على حركة السعر قصيرة المدى.", src:"SESSION 01"},
+  {en:"Speculator", ar:"مضارب", def:"بيحاول الاستفادة من تحركات سعرية قصيرة جدًا، ومستوى عدم اليقين والمخاطرة عنده أعلى. غير موصى بيه كنقطة بداية.", src:"SESSION 01"},
+  {en:"Hedger", ar:"متحوط", def:"هدفه الأساسي تقليل أو إدارة مخاطرة معينة، مش بالضرورة الربح من حركة السعر نفسها.", src:"SESSION 01"},
+  {en:"Institutional Investor", ar:"مستثمر مؤسسي", def:"صناديق استثمار، بنوك، صناديق سيادية، أو مؤسسات كبيرة بتتداول بأحجام ضخمة مقارنة بالفرد.", src:"SESSION 01"},
+  {en:"Assets Under Management (AUM)", ar:"الأصول تحت الإدارة", def:"إجمالي الأصول اللي بتديرها مؤسسة استثمارية لصالح عملائها، وهي مختلفة تمامًا عن الأصول اللي تملكها المؤسسة نفسها.", src:"SESSION 01"},
+  {en:"Major Shareholder", ar:"مساهم كبير", def:"مستثمر بيمتلك نسبة كبيرة نسبيًا من أسهم الشركة (5% كمثال إرشادي)، والتعريف الدقيق ونسب الإفصاح تخضع لقواعد كل سوق.", src:"SESSION 01"},
+  {en:"Market Maker", ar:"صانع سوق", def:"في الاستخدام الدارج: مؤسسة كبيرة قادرة تحرك السعر بدخولها أو خروجها. التعريف الفني الرسمي أضيق وبيرتبط بالتزامات محددة لتوفير السيولة.", src:"SESSION 01"},
+  {en:"Buying / Selling Pressure", ar:"ضغوط شرائية / بيعية", def:"زيادة الطلب على سهم (شرائية) أو زيادة المعروض منه للبيع (بيعية)، وهما المحرك الأساسي لحركة السعر قصيرة المدى.", src:"SESSION 01"},
+  {en:"Fundamental Analysis", ar:"التحليل الأساسي", def:"دراسة الشركة من الداخل: قوائمها المالية، إيراداتها، أرباحها، ديونها، وقطاعها، عشان تجاوب على سؤال \"إيه اللي أشتريه\".", src:"SESSION 01"},
+  {en:"Technical Analysis", ar:"التحليل الفني", def:"دراسة حركة السعر والحجم على الشارت عشان تجاوب على سؤال \"أشتري إمتى وبكام\".", src:"SESSION 01"},
+  {en:"Limit Order", ar:"أمر بسعر محدد", def:"أمر شراء أو بيع بتحدد فيه سعر معين، وينفذ تلقائيًا بس لما السهم يوصل للسعر ده.", src:"SESSION 01"},
+  {en:"Stop Loss", ar:"وقف خسارة", def:"مستوى سعري محدد مسبقًا للخروج من الصفقة لو السهم تحرك عكس توقعك، كجزء من خطة إدارة المخاطر.", src:"SESSION 01"},
+  {en:"False Breakout", ar:"كسر كاذب", def:"السهم يبدو وكأنه كسر مستوى دعم أو مقاومة، فتتصرف على أساس استمرار الاتجاه، وبعدين يرتد عكس الاتجاه تمامًا.", src:"SESSION 01"},
+  {en:"Support / Resistance", ar:"دعم / مقاومة", def:"مستويات سعرية بيميل السهم يرتد عندها لأعلى (دعم) أو لأسفل (مقاومة)، أساسية في التحليل الفني.", src:"SESSION 01"},
+  {en:"Inflation", ar:"التضخم", def:"ارتفاع عام ومستمر في مستوى الأسعار، يؤدي لانخفاض القوة الشرائية للنقود بمرور الوقت.", src:"SESSION 01"},
+  {en:"Headline Inflation", ar:"التضخم العام", def:"مقياس تضخم شامل يضم كل مكونات سلة الأسعار، بما فيها العناصر شديدة التقلب زي الغذاء والوقود.", src:"SESSION 01"},
+  {en:"Core Inflation", ar:"التضخم الأساسي", def:"مقياس تضخم بيستبعد العناصر شديدة التقلب عشان يوضح الاتجاه الأساسي للأسعار بعيدًا عن الصدمات المؤقتة.", src:"SESSION 01"},
+  {en:"Disinflation", ar:"تباطؤ التضخم", def:"انخفاض في معدل ارتفاع الأسعار (مثلًا من 20% إلى 15%)، والأسعار لسه بترتفع لكن بسرعة أبطأ. ليس انخفاضًا في الأسعار نفسها.", src:"SESSION 01"},
+  {en:"Deflation", ar:"الانكماش السعري", def:"انخفاض فعلي وعام في مستوى الأسعار نفسه، مختلف تمامًا عن Disinflation.", src:"SESSION 01"},
+  {en:"Purchasing Power", ar:"القوة الشرائية", def:"مقدار السلع والخدمات اللي يقدر مبلغ معين من المال يشتريه. بتنخفض مع ارتفاع التضخم.", src:"SESSION 01"},
+  {en:"Money Illusion", ar:"وهم المال", def:"ميل الشخص للتركيز على القيمة الاسمية للنقود وتجاهل القوة الشرائية الحقيقية بعد أخذ التضخم في الاعتبار.", src:"SESSION 01"},
+  {en:"Nominal vs Real", ar:"اسمي مقابل حقيقي", def:"القيمة الاسمية هي الرقم الظاهر بدون تعديل. القيمة الحقيقية هي نفس الرقم بعد خصم أثر التضخم.", src:"SESSION 01"},
+  {en:"Diversification", ar:"التنويع", def:"توزيع استثماراتك على أصول أو شركات متعددة بدل تركيزها في أصل واحد، بيقلل بعض المخاطر لكن لا يلغيها.", src:"SESSION 01"},
+  {en:"Asset Allocation", ar:"توزيع الأصول", def:"تقسيم أموالك بين أنواع مختلفة من الأصول (أسهم، ذهب، كاش، سندات) حسب أهدافك وقدرتك على تحمل المخاطرة.", src:"SESSION 01"},
+  {en:"Risk", ar:"المخاطرة", def:"درجة عدم اليقين حول النتيجة المستقبلية لاستثمار معين. مخاطرة أعلى تتطلب عادة عائد متوقع أعلى، لكنها لا تضمنه.", src:"SESSION 01"},
+  {en:"Volatility", ar:"التقلب", def:"مدى واتساع تحرك سعر أصل معين خلال فترة زمنية. تقلب أعلى يعني تحركات سعرية أكبر في الاتجاهين.", src:"SESSION 01"},
+  {en:"Index", ar:"مؤشر", def:"سلة من الأسهم مُختارة وفق منهجية معينة، بتستخدم كمقياس لأداء مجموعة من السوق (زي EGX 30).", src:"SESSION 01"},
+  {en:"Index Weight", ar:"وزن المؤشر", def:"مدى تأثير حركة شركة معينة على المؤشر ككل، وبيتحدد غالبًا بالقيمة السوقية للشركة نسبة لباقي مكونات المؤشر.", src:"SESSION 01"},
+  {en:"EGX 30 / 70 / 100", ar:"مؤشرات البورصة المصرية", def:"EGX 30 يضم أكبر 30 شركة مُدرجة وفق منهجية المؤشر. EGX 70 مجموعة شركات أخرى. EGX 100 يجمع مكونات الاثنين. تتغير مكوناتها بمراجعات دورية.", src:"SESSION 01"},
+  {en:"Insider Information", ar:"معلومات داخلية", def:"معلومات غير معلنة للعامة يمكن أن تؤثر جوهريًا على سعر السهم. استخدامها في التداول يخضع لقواعد تنظيمية صارمة في الأسواق المنظمة.", src:"SESSION 01"},
+  {en:"Systemic Risk", ar:"مخاطرة نظامية", def:"خطر يؤثر على السوق أو الاقتصاد بالكامل (زي أزمة أو حرب)، مختلف عن مخاطرة شركة واحدة بعينها.", src:"SESSION 01"},
+  {en:"Emotional Discipline", ar:"الانضباط النفسي والعاطفي", def:"القدرة على الالتزام بخطتك الاستثمارية بدل اتخاذ قرارات مبنية على الخوف أو الطمع لحظة الضغط.", src:"SESSION 01"},
+  {en:"Emergency Fund", ar:"صندوق طوارئ", def:"مبلغ سائل منفصل عن استثماراتك، مخصص للطوارئ، عشان متضطرش تبيع أصولك وقت السوق منخفض.", src:"SESSION 01"},
+  {en:"Debt Financing vs Equity Financing", ar:"تمويل بالدين مقابل تمويل بالملكية", def:"الدين = اقتراض بالتزام سداد ثابت. الملكية = بيع جزء من الشركة مقابل تمويل بدون التزام سداد ثابت.", src:"SESSION 01"},
+  {en:"Survivorship Bias", ar:"انحياز الناجين", def:"ميل لتقييم فرصة استثمارية بناءً على الأمثلة الناجحة فقط، مع تجاهل الحالات اللي خسرت، مما يعطي صورة مضللة عن متوسط الاحتمالات الفعلي.", src:"SESSION 01"},
+];
+
+const container = document.getElementById('terms');
+const search = document.getElementById('search');
+
+function normalize(s){ return s.toLowerCase().trim(); }
+
+function render(list){
+  container.innerHTML = '';
+  let lastLetter = '';
+  list.forEach(t => {
+    const letter = t.en[0].toUpperCase();
+    if(letter !== lastLetter){
+      const h = document.createElement('div');
+      h.className = 'letter-head';
+      h.textContent = letter;
+      container.appendChild(h);
+      lastLetter = letter;
+    }
+    const row = document.createElement('div');
+    row.className = 'gterm';
+    row.innerHTML = `
+      <div>
+        <div class="term-en">${t.en}</div>
+        <div class="term-ar">${t.ar}</div>
+      </div>
+      <div>
+        <div class="term-def">${t.def}</div>
+        <span class="term-src">${t.src}</span>
+      </div>`;
+    container.appendChild(row);
+  });
+  if(list.length === 0){
+    container.innerHTML = '<p style="color:var(--text-faint)">مفيش مصطلح مطابق للبحث.</p>';
+  }
+}
+
+const sorted = [...terms].sort((a,b) => a.en.localeCompare(b.en));
+render(sorted);
+
+search.addEventListener('input', () => {
+  const q = normalize(search.value);
+  if(!q){ render(sorted); return; }
+  const filtered = sorted.filter(t =>
+    normalize(t.en).includes(q) || t.ar.includes(search.value.trim()) || normalize(t.def).includes(q)
+  );
+  render(filtered);
+});
+</script>
+
+</body>
+</html>
