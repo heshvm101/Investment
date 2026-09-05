@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سيشن 2: مقدمة التحليل الأساسي والقوائم المالية | دفتر البورصة والاستثمار</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">هش.بورصة</span>
+      <span class="brand-name">دفتر البورصة والاستثمار</span>
+      <span class="brand-sub">SESSION LOG · EGX</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">الرئيسية</a>
+      <details class="nav-dropdown">
+        <summary class="active"><span class="caret">▾</span> السيشنز</summary>
+        <div class="nav-dropdown-menu">
+          <a href="session-01.html"><span class="num">01</span> مقدمة البورصة</a>
+          <a href="session-02.html" class="active"><span class="num">02</span> التحليل الأساسي والقوائم المالية</a>
+          <a href="session-03.html"><span class="num">03</span> النسب المالية والتقييم</a>
+          <span class="locked"><span class="num">04</span> لسه هتضاف</span>
+        </div>
+      </details>
+      <a href="glossary.html">القاموس</a>
+    </nav>
+  </div>
+  <div class="progress-fill" id="progress-fill"></div>
+</div>
+
+<div class="shell with-side">
+  <aside class="side">
+    <div class="side-title">SESSION 02 · الفهرس</div>
+    <ul class="side-list" id="side-list">
+      <li><a href="#s0">قبل ما ندخل</a></li>
+      <li><a href="#s1">يعني إيه Fundamental Analysis بعمق</a></li>
+      <li><a href="#s2">تشبيه الشاشة وNews Analysis</a></li>
+      <li><a href="#s3">القوائم المالية: إيه هي وليه لازمة</a></li>
+      <li><a href="#s4">إزاي تجيبها فعليًا</a></li>
+      <li><a href="#s5">Full Year وTrend</a></li>
+      <li><a href="#s6">من الجديد للقديم</a></li>
+      <li><a href="#s7">Consolidated مش Standalone</a></li>
+      <li><a href="#s8">قائمة المركز المالي والمعادلة</a></li>
+      <li><a href="#s9">الأصول المتداولة والمخزون</a></li>
+      <li><a href="#s10">الالتزامات المتداولة وحقوق الملكية</a></li>
+      <li><a href="#s11">السيولة: أصول مقابل التزامات</a></li>
+      <li><a href="#s12">قائمة الدخل: إيراد مقابل مبيعات</a></li>
+      <li><a href="#s13">من مجمل الربح للربح التشغيلي</a></li>
+      <li><a href="#s14">صافي الربح وربحية السهم</a></li>
+      <li><a href="#s15">الأقواس والأرقام السالبة</a></li>
+      <li><a href="#s16">قائمة التدفقات النقدية</a></li>
+      <li><a href="#s17">ليه صافي الربح مش هو الكاش</a></li>
+      <li><a href="#s18">جودة الأرباح</a></li>
+      <li><a href="#s19">العلاقة بين القوائم ورأس المال العامل</a></li>
+      <li><a href="#s20">القيمة الاسمية والسوقية والدفترية</a></li>
+      <li><a href="#s21">أرقام الشيت وهيكل الإكسل</a></li>
+      <li><a href="#s22">التاسك: MOPCO عمليًا</a></li>
+      <li><a href="#s23">الاختيار المبدئي والفرضية الاستثمارية</a></li>
+      <li><a href="#s24">تنبيهات على كلام المحاضر</a></li>
+      <li><a href="#s25">خلاصة ويلي بعده</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <div class="hero" style="padding-top:2.2rem;">
+      <div class="hero-eyebrow">SESSION 02 · فاندمنتال</div>
+      <h1>مقدمة التحليل الأساسي: بتقرا الشركة من جوه إزاي</h1>
+      <p class="lead">السيشن اللي فاتت جاوبت على سؤال "البورصة يعني إيه". السيشن دي بتبدأ الإجابة على السؤال الحقيقي: <strong>أشتري إيه</strong>. مفيش حسابات معقدة النهارده، بس القاعدة اللي كل حاجة تانية هتترتب عليها: تقرا القوائم المالية الثلاث صح، وتفهم كل بند بيقول إيه، قبل ما تيجي تحسب أي نسبة أو تاخد أي قرار.</p>
+    </div>
+
+    <div class="content">
+
+      <h2 id="s0"><span class="n">00</span>قبل ما ندخل: السؤال الأساسي</h2>
+      <p class="lede">السيشن الأولى بنت الأساس: Stock، Bond، ETF، Broker، Investor، Market، Index، Inflation، Risk. من هنا بدأنا ندخل في السؤال الأهم:</p>
+
+      <div class="box rule">
+        <span class="label">السؤال اللي كل حاجة جاية هتجاوب عليه</span>
+        <p>لو أنا عايز أشتري سهم، أعرف منين إن الشركة أصلًا تستحق أحط فيها فلوسي؟ وهنا بيبدأ الـFundamental Analysis (التحليل الأساسي).</p>
+      </div>
+
+      <h2 id="s1"><span class="n">01</span>يعني إيه Fundamental Analysis بشكل أعمق</h2>
+      <p>التعريف المبسط اللي اتقال: دراسة الشركة ماليًا واقتصاديًا، ومعرفة الأخبار اللي ممكن تأثر عليها وعلى القطاع، سواء بالإيجاب أو بالسلب. ده تعريف مناسب كبداية، لكن Fundamental Analysis أوسع بكتير من مجرد قراءة القوائم المالية. لما تعمله لشركة، إنت فعليًا بتحاول تجاوب على 4 مجموعات أسئلة:</p>
+
+      <table>
+        <tr><th>المحور</th><th>أسئلة نموذجية</th></tr>
+        <tr><td>عن الشركة نفسها</td><td>بتعمل إيه؟ بتبيع إيه؟ مين عملاؤها؟ عندها ميزة تنافسية؟ السوق بينمو ولا بينكمش؟</td></tr>
+        <tr><td>ماليًا</td><td>Revenue وGross Profit وOperating Profit وNet Profit بتزيد؟ Cash Flow التشغيلي قوي؟ الديون والسيولة كويسين؟</td></tr>
+        <tr><td>اقتصاديًا</td><td>التضخم وسعر الفائدة وسعر الصرف وأسعار المواد الخام مؤثرين؟ فيه قيود أو حوافز حكومية على القطاع؟</td></tr>
+        <tr><td>إخباريًا</td><td>قرار حكومي جديد؟ تغيرت أسعار منتج أساسي؟ توسع أو مشكلة إنتاج للشركة؟</td></tr>
+      </table>
+
+      <p>يعني ممكن تفكر في الموضوع بالشكل ده:</p>
+      <div class="flow-panels">
+        <div class="flow-panel">
+          <div class="panel-eyebrow">من الاقتصاد الكبير لقرار الشراء</div>
+          <div class="panel-title">مسار Fundamental Analysis الكامل</div>
+          <div class="flow-steps">
+            <div class="flow-step">ECONOMY</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">SECTOR</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">BUSINESS</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step hl">FINANCIAL STATEMENTS</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">FINANCIAL RATIOS</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">NEWS & EVENTS</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">VALUATION</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">INVESTMENT DECISION</div>
+          </div>
+        </div>
+      </div>
+
+      <p>السيشن دي ركزت أساسًا على حلقة واحدة من السلسلة دي: <strong>Financial Statements</strong>، لأنها المادة الخام اللي هنستخدمها بعد كده في النسب المالية والتحليل.</p>
+
+      <div class="box rule">
+        <span class="label">طريقة المحاضر في تبسيط العلاقة</span>
+        <p>Fundamental Analysis يساعدني أعرف "أحط فلوسي فين". Technical Analysis يساعدني أعرف "أشتري بكام". ده Framework تعليمي لترتيب الكورس، مش تعريف أكاديمي حصري لكل من التحليلين.</p>
+      </div>
+
+      <h2 id="s2"><span class="n">02</span>تشبيه الشاشة وGood Company ≠ Good Investment</h2>
+      <div class="box example">
+        <span class="label">مثال: شاشة التلفزيون</span>
+        <p>لو عايز تشتري شاشة، مش هتقول "هات أرخص شاشة وخلاص". هتسأل الأول: الماركة إيه؟ الجودة إيه؟ المواصفات إيه؟ هل المنتج يستاهل أصلًا؟ ده يشبه Fundamental Analysis. بعد ما تحدد النوع المناسب، تدور على مين بيبيعها بأفضل سعر، وده يشبه Technical Analysis.</p>
+      </div>
+
+      <div class="box rule">
+        <span class="label">Good Company ≠ Good Investment at Any Price</span>
+        <p>مش منطقي تختار أسوأ شركة لمجرد إن سعر سهمها رخيص. وفي نفس الوقت، مش منطقي تشتري شركة ممتازة بأي سعر مهما كان مبالغ فيه. الشركة ممكن تكون ممتازة، لكن السهم يكون غالي جدًا وقتها.</p>
+      </div>
+
+      <p>وفيه جزء ثالث بيتوزع بين الاتنين اسمه <strong>News Analysis</strong>: الخبر ممكن يغير توقعات الأرباح، الطلب، تكاليف الإنتاج، سعر الصرف، أو تكلفة التمويل. لو الحكومة قررت تفرض قيودًا على تصدير منتج معين، شركة معتمدة على تصديره ممكن تتأثر فورًا. يعني مش كفاية تحفظ أرقام الشركة، لازم تفهم البيئة اللي بتشتغل فيها.</p>
+
+      <h2 id="s3"><span class="n">03</span>القوائم المالية: إيه هي وليه لازمة</h2>
+
+      <div class="box term">
+        <span class="label">Financial Statements (القوائم المالية)</span>
+        <p>التقارير اللي الشركة بتعرض من خلالها معلومات عن مركزها المالي، نتائج أعمالها، وتدفقاتها النقدية. الشركات المدرجة بتعلنها بشكل دوري وفق المتطلبات التنظيمية، غالبًا كل ربع سنة (Q1, Q2, Q3, Q4).</p>
+      </div>
+
+      <p>في الشرح، السنة بتتقسم لأرباع، لكن في التاسك إحنا هنشتغل على <strong>السنة المالية الكاملة</strong> (Full Year) فقط، مش ربع بربع.</p>
+
+      <h2 id="s4"><span class="n">04</span>إزاي تجيب القوائم المالية فعليًا</h2>
+
+      <div class="box rule">
+        <span class="label">الخطوة العملية</span>
+        <p>ادخل على الموقع الرسمي للشركة وابحث عن قسم <strong>Investor Relations</strong> (علاقات المستثمرين). ده المصدر الرسمي للأرقام المحاسبية، بدل ما تعتمد على موقع طرف ثالث. مثلًا لو عايز قوائم MOPCO، اكتب في جوجل: "MOPCO Investor Relations".</p>
+      </div>
+
+      <p>هتلاقي أقسام تانية في نفس الصفحة زي: General Assembly، Board Decisions، Trading Data، Disclosures. كل ده مش هدفنا دلوقتي. إحنا بندور على قسم <strong>Financial Reports</strong> أو "التقارير المالية".</p>
+
+      <div class="box caution">
+        <span class="label">ما تقلقش من عدد الصفحات</span>
+        <p>التقرير المالي الكامل ممكن يوصل لـ60 صفحة أو أكتر. المطلوب الأساسي هو 3 قوائم بس: Balance Sheet، Income Statement، وCash Flow Statement. أما الإيضاحات المتممة (Notes/Disclosures) فمش مطلوبة في التاسك الحالي، لكنها مش عديمة القيمة: في التحليل الحقيقي بتشرح السياسات المحاسبية والديون والالتزامات وأطراف ذات علاقة، وهنرجعلها لاحقًا.</p>
+      </div>
+
+      <h2 id="s5"><span class="n">05</span>Full Year وTrend</h2>
+
+      <div class="box rule">
+        <span class="label">ليه Full Year مش Quarter؟</span>
+        <p>لأننا عايزين نقارن Year over Year: 2025 مقابل 2024، 2024 مقابل 2023، وهكذا. المقارنة دي بتديك <strong>Trend</strong>، يعني اتجاه الشركة عبر الزمن. لو Revenue طالع بالشكل 100 ثم 120 ثم 140 ثم 170، ده اتجاه صاعد. لو طالع نازل زي 100 ثم 160 ثم 80 ثم 150، ده تذبذب. السؤال مش "آخر سنة حلوة؟"، السؤال "الشركة ماشية في اتجاه إيه؟"</p>
+      </div>
+
+      <p>وده سبب تفضيل المحاضر يبدأ من سنة 2019 تحديدًا: عشان تاخد Wider View تشمل سنة قبل كورونا، بدل الاكتفاء بآخر سنتين بس.</p>
+
+      <div class="box caution">
+        <span class="label">ليه آخر سنتين بس ممكن يضللوك</span>
+        <p>مثال شركات الأسمدة زي MOPCO: لو بصيت بس على فترة حصل فيها ارتفاع كبير في أسعار المنتجات أو تغير كبير في سعر الصرف، هتشوف أرباح ضخمة وتقول "الشركة دي ممتازة". لكن لو رجعت لسنوات أقدم، ممكن تكتشف إن الارتفاع ده كان مرتبط بظرف استثنائي مش متكرر. ده أول باب لمفهوم مهم جدًا: <strong>Earnings Quality (جودة الأرباح)</strong>. السؤال مش بس "ربحت كام؟"، لكن "الربح ده جاي منين، ومستدام ولا لأ؟"</p>
+      </div>
+
+      <h2 id="s6"><span class="n">06</span>القاعدة الذهبية: خد من الجديد للقديم</h2>
+
+      <div class="box rule">
+        <span class="label">من الجديد للقديم، مش العكس</span>
+        <p>ابدأ بآخر سنة مالية متاحة وارجع للخلف: 2025 ثم 2024 ثم 2023، وهكذا. متبداش من 2019 وتتحرك للأمام.</p>
+      </div>
+
+      <div class="box term">
+        <span class="label">Comparative Figures وRestatement</span>
+        <p>قائمة 2025 بتعرض عمود 2025 وجنبه عمود مقارنة لـ2024 (Comparative Figures). المشكلة إن رقم 2024 ده أحيانًا بيكون اتعدل أو اتعاد تصنيفه (Restatement / Reclassification) مقارنة بالرقم الأصلي المنشور في قائمة 2024 نفسها. يعني نفس السنة ممكن يكون ليها رقمين مختلفين شوية في قائمتين مختلفتين.</p>
+      </div>
+
+      <p>عشان كده، لما تكون بتعمل سلسلة زمنية، خد كل رقم من أحدث قائمة متاحة ليه، بدل ما تتلخبط بين نسختين مختلفتين لنفس السنة.</p>
+
+      <h2 id="s7"><span class="n">07</span>سنة كاملة، ومجمعة مش مستقلة</h2>
+
+      <div class="box rule">
+        <span class="label">Annual مش Quarter</span>
+        <p>اختار دايمًا القائمة السنوية الكاملة. لو التقرير مكتوب "Financial Statements for the year ended 31 December 2025"، فده معناه إنك أمام قائمة سنوية كاملة.</p>
+      </div>
+
+      <div class="box term">
+        <span class="label">Consolidated مقابل Standalone</span>
+        <p><strong>Standalone:</strong> القوائم المالية للشركة نفسها لوحدها فقط.<br><strong>Consolidated:</strong> قوائم المجموعة الاقتصادية ككل، يعني الشركة الأم والشركات التابعة اللي بتدخل في التجميع وفق قواعد المحاسبة.</p>
+      </div>
+
+      <p>في التاسك، المحاضر طلب <strong>Consolidated</strong> لأن هدف التمرين إنك تشوف الكيان الاقتصادي ككل، مش الشركة الأم وحدها.</p>
+
+      <div class="box caution">
+        <span class="label">Consolidated مش معناها "أفضل دايمًا"</span>
+        <p>اختيار Consolidated هنا خاص بهدف هذا التمرين تحديدًا (رؤية المجموعة ككل). في تحليلات تانية بغرض مختلف، ممكن يكون Standalone هو الأنسب. القرار بيتحدد حسب هدف التحليل، مش قاعدة مطلقة.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">لو السنة المالية لسه ما خلصتش</span>
+        <p>لو إحنا في نص سنة 2026 مثلًا، الجدول السنوي التاريخي بياخد آخر سنة مالية مكتملة (2025)، مش 2026 كسنة كاملة. لكن ده مش معناه تجاهل 2026 خالص: ممكن تستخدم نتائج ربع أو نص سنة (Q1 2026, H1 2026) كـ"تحديث حالي" لمعرفة الشركة ماشية إزاي دلوقتي، من غير ما تحطها في جدول Full Year قبل ما تكتمل.</p>
+      </div>
+
+      <h2 id="s8"><span class="n">08</span>القائمة الأولى: قائمة المركز المالي (Balance Sheet)</h2>
+
+      <div class="box term">
+        <span class="label">Balance Sheet / Statement of Financial Position (قائمة المركز المالي / الميزانية)</span>
+        <p>لقطة (Position at a specific date) لوضع الشركة المالي في لحظة زمنية محددة، مثلًا 31 ديسمبر 2025. بتجاوب على: الشركة عندها إيه وعليها إيه دلوقتي؟</p>
+      </div>
+
+      <p>القائمة دي عندها 3 مكونات أساسية: <strong>Assets (الأصول)</strong>، <strong>Liabilities (الالتزامات)</strong>، و<strong>Equity (حقوق الملكية)</strong>، ومربوطين بمعادلة واحدة.</p>
+
+      <div class="box rule">
+        <span class="label">المعادلة المحاسبية الذهبية</span>
+        <p><strong>Assets = Liabilities + Equity</strong><br>يعني أي أصل تمتلكه الشركة ممول إما بدين (التزام على الشركة) أو بحق ملكية (فلوس أصحاب الشركة الفعلية). لو Assets = 100 مليون، وLiabilities = 40 مليون، يبقى Equity لازم تساوي 60 مليون بالظبط.</p>
+      </div>
+
+      <div class="box example">
+        <span class="label">مثال: البيت والقسط</span>
+        <p>تخيل بيت قيمته مليون جنيه، وعليك منه 700 ألف لسه ما اتسددتش. البيت (Asset) بقيمة مليون، لكن صافي ملكيتك الفعلية (Equity) في المثال المبسط ده 300 ألف بس. مجرد إن عندك "أصل" ما يعنيش إنك تملكه بالكامل. ونفس المنطق على مستوى الشركة: شركة عندها Assets = مليار، لكن Liabilities = 900 مليون، يبقى Equity = 100 مليون بس. مش منطقي تشوف رقم الأصول وتقول "الشركة غنية" من غير ما تسأل: المليار ده ممول بإيه؟</p>
+      </div>
+
+      <p>ومن المعادلة: <strong>Equity = Assets − Liabilities</strong>، وده معنى <strong>Net Assets (صافي الأصول)</strong>: صافي أصول الشركة بعد خصم الالتزامات.</p>
+
+      <h2 id="s9"><span class="n">09</span>الأصول المتداولة والمخزون</h2>
+
+      <div class="box term">
+        <span class="label">Current Assets (الأصول المتداولة)</span>
+        <p>بشكل مبسط: أصول تقدر الشركة تحولها لكاش أو تستخدمها في المدى القصير. أمثلة: Cash and Cash Equivalents، Trade Receivables، Inventory، وبعض الاستثمارات قصيرة الأجل.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">التبسيط ده مفيد، لكن مش التعريف المحاسبي الكامل</span>
+        <p>محاسبيًا، تصنيف بند كـCurrent Asset له معايير محددة، وليس مجرد "أي حاجة أقدر أبيعها بسرعة". التعريف المبسط كافٍ لفهم الفكرة العامة في المرحلة دي، لكن ماينفعش تطبقه حرفيًا كقاعدة تصنيف نهائية.</p>
+      </div>
+
+      <div class="box term">
+        <span class="label">Accounts Receivable (الحسابات المدينة)</span>
+        <p>الشركة باعت منتج بـ100 ألف، والعميل هيدفع بعد 60 يوم. الشركة عندها حق تعاقدي في تحصيل الـ100 ألف دي، وده مورد اقتصادي لها، فبيظهر كـAsset.</p>
+      </div>
+
+      <p>لكن من الناحية الاستثمارية، مش كل Receivables متساوية الجودة: لو الحسابات المدينة بتزيد بسرعة أكبر من المبيعات، السؤال يبقى: العملاء بيدفعوا متأخر؟ شروط الائتمان اتغيرت؟ التحصيل بقى أصعب؟</p>
+
+      <div class="box term">
+        <span class="label">Inventory (المخزون)</span>
+        <p>المخزون من المنتجات أو المواد أو البضائع اللي بتدخل ضمن دورة أعمال الشركة، سواء Raw Materials أو Work in Progress أو Finished Goods.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">هل زيادة المخزون كويسة؟ مش بالضرورة</span>
+        <p>احتمال 1: الشركة متوقعة طلب قوي وبتجهز مخزون، وده ممكن يكون إيجابي. احتمال 2: المبيعات ضعفت والبضاعة مش بتتباع، وده سلبي. المخزون لوحده ما يكفيش للحكم، لازم تقارنه بحركة المبيعات: لو Inventory زاد بسرعة كبيرة وSales زادت بسرعة قليلة، فده مؤشر تحذير. أما لو الاتنين زادوا مع بعض، فده أقرب لتجهيز طبيعي لنمو متوقع.</p>
+      </div>
+
+      <p>المقياس الأدق لمعرفة هل المخزون بيتحرك كويس هو <strong>Inventory Turnover (معدل دوران المخزون)</strong>، وهنشرحه بالتفصيل في سيشن النسب المالية. المخزون المتراكم بيسبب 4 مشاكل: تكلفة تخزين، حبس رأس المال (Cash Tied Up)، خطر تقادم أو تلف (Obsolescence)، وتأخير في توليد الأرباح.</p>
+
+      <h2 id="s10"><span class="n">10</span>الالتزامات المتداولة وحقوق الملكية</h2>
+
+      <div class="box term">
+        <span class="label">Current Liabilities (الالتزامات المتداولة)</span>
+        <p>التزامات قصيرة الأجل نسبيًا أو مرتبطة بالدورة التشغيلية العادية للشركة. أمثلة: Accounts Payable، Short-Term Borrowings، Accrued Liabilities، Income Tax Payable.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">تصحيح مهم: مش قاعدة "أكتر أو أقل من 6 شهور"</span>
+        <p>الشرح المبسط اللي بيربط الالتزامات المتداولة بمدة "6 شهور" مش قاعدة محاسبية عامة. التصنيف الفعلي له شروط محددة، وأشهرها معيار الـ12 شهرًا في الحالات ذات الصلة، بالإضافة لمعيار الدورة التشغيلية العادية للنشاط. يعني الحد الزمني المستخدم للتبسيط في الشرح أقل من الحد الفعلي المعتمد محاسبيًا، فما تحفظش رقم الـ6 شهور كقاعدة.</p>
+      </div>
+
+      <div class="box term">
+        <span class="label">Accounts Payable (الحسابات الدائنة)</span>
+        <p>عكس Accounts Receivable: الشركة اشترت خامات من مورد بـ500 ألف، والمورد سمحلها تدفع بعد شهرين. الشركة بقى عليها التزام (Liability) للمورد.</p>
+      </div>
+
+      <p>احفظها بالطريقة دي: <strong>Receivable = الناس مديونة للشركة (Asset). Payable = الشركة مديونة للناس (Liability).</strong></p>
+
+      <div class="box caution">
+        <span class="label">"لو الالتزامات المتداولة قلّت، أفضل": بس مش بمعزل</span>
+        <p>انخفاض الالتزامات القصيرة منطقي كمبدأ عام، لكن لو الشركة سددت 100 مليون من التزاماتها باستخدام الكاش، فـCurrent Liabilities هتقل، لكن الـCash هيقل معاها كمان. هل الشركة بقت أفضل تلقائيًا؟ مش بالضرورة. أي رقم لازم يتفسر مع الأرقام المرتبطة به، مش بمعزل عنها.</p>
+      </div>
+
+      <div class="box term">
+        <span class="label">Equity (حقوق الملكية)</span>
+        <p>الجزء المتبقي من أصول الشركة بعد خصم الالتزامات. زيادتها عمومًا مؤشر إيجابي، لكن لازم تعرف مصدرها: أرباح محتجزة (Retained Earnings)؟ زيادة رأس مال (New Share Capital)؟ إعادة تقييم (Revaluation)؟ كل مصدر له دلالة مختلفة تمامًا. المهم هو التركيبة والاتجاه (Composition + Trend)، مش الرقم وحده.</p>
+      </div>
+
+      <h2 id="s11"><span class="n">11</span>السيولة: الأصول المتداولة مقابل الالتزامات المتداولة</h2>
+
+      <div class="box term">
+        <span class="label">Liquidity (السيولة)</span>
+        <p>قدرة الشركة على الوفاء بالتزاماتها قصيرة الأجل. لو Current Assets = 200 وCurrent Liabilities = 100، فمبدئيًا الموارد المتداولة أكبر من الالتزامات المتداولة.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">المقارنة المبدئية مش كفاية للحكم النهائي</span>
+        <p>لازم تسأل: الـ200 دي معظمها كاش؟ ولا مخزون؟ ولا حسابات مدينة صعبة التحصيل؟ لأن Current Assets أكبر من Current Liabilities بالرقم بس، ده مش كافٍ للحكم على قوة السيولة الفعلية، لازم تشوف تركيبة الأصول المتداولة نفسها.</p>
+      </div>
+
+      <div class="box rule">
+        <span class="label">أهم بنود Balance Sheet في التاسك</span>
+        <p>Total Assets · Total Current Assets · Total Liabilities · Total Current Liabilities · Inventory · Total Equity.</p>
+      </div>
+
+      <h2 id="s12"><span class="n">12</span>القائمة الثانية: قائمة الدخل، إيراد مقابل مبيعات</h2>
+
+      <div class="box term">
+        <span class="label">Income Statement (قائمة الدخل)</span>
+        <p>على عكس Balance Sheet (لقطة عند تاريخ معين)، دي قائمة أداء الشركة <strong>خلال فترة</strong> (For a Period)، مثلًا "Year ended 31 December 2025". بتجاوب على: الشركة أداؤها كان عامل إزاي خلال الفترة؟</p>
+      </div>
+
+      <div class="box example">
+        <span class="label">مثال: مصنع الكراسي والترابيزات</span>
+        <p>مصنع نشاطه الرئيسي كراسي، باع كراسي بمليون جنيه خلال السنة، ده <strong>Sales</strong>: إيراد النشاط الرئيسي فقط. في نفس السنة باع ترابيزات (نشاط غير أساسي) بمليونين. إجمالي ما حصلته الشركة من الاتنين مع بعض (3 مليون) هو <strong>Revenue</strong>: إجمالي الإيرادات من أي مصدر، رئيسي أو غيره.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">في القوائم الفعلية مش شرط يكونوا مفصولين</span>
+        <p>الفرق بين Sales وRevenue هنا لغرض تعليمي. في القوائم الحقيقية، شكل العرض والتسمية بيختلف حسب الشركة وطبيعة نشاطها وسياساتها المحاسبية، وممكن تلاقي بند واحد بس يمثل الإيرادات الرئيسية بدون تفرقة صريحة.</p>
+      </div>
+
+      <div class="box term">
+        <span class="label">Recurring مقابل Non-Recurring Revenue</span>
+        <p><strong>Recurring:</strong> إيراد متكرر مرتبط بالنشاط المعتاد للشركة. <strong>Non-Recurring:</strong> إيراد استثنائي أو غير متكرر، زي بيع مبنى قديم. لو شركة نشاطها الأساسي بيع أجهزة، لكن باعت مبنى قديم بـ50 مليون في سنة معينة، فمقارنة إجمالي الفلوس الداخلة بالكامل بنشاطها العادي استنتاج مضلل. الربح المستدام (من النشاط المتكرر) أهم بكتير من الربح الاستثنائي لغرض تقييم الشركة على المدى الطويل.</p>
+      </div>
+
+      <h2 id="s13"><span class="n">13</span>من مجمل الربح للربح التشغيلي</h2>
+
+      <table>
+        <tr><th>البند</th><th>معناه</th></tr>
+        <tr><td>Revenue / Sales</td><td>أول بند في القائمة</td></tr>
+        <tr><td>Cost of Sales</td><td>التكلفة المباشرة المرتبطة بما تم بيعه (خامات، أجور مباشرة)</td></tr>
+        <tr><td>Gross Profit</td><td>Revenue − Cost of Sales</td></tr>
+        <tr><td>Operating Expenses</td><td>مصروفات بيعية، تسويقية، إدارية</td></tr>
+        <tr><td>Operating Profit</td><td>Gross Profit − Operating Expenses</td></tr>
+        <tr><td>Finance Costs</td><td>فوائد القروض على الشركة</td></tr>
+        <tr><td>Net Profit</td><td>الربح النهائي بعد كل المصروفات والضرائب</td></tr>
+      </table>
+
+      <div class="box caution">
+        <span class="label">Gross Profit مش Net Profit</span>
+        <p>لو Sales = مليون وCost of Sales = 600 ألف، فـGross Profit = 400 ألف، لكن ده مش صافي الربح النهائي. لسه فاضل Selling وAdministrative وOther Operating Expenses وFinance Costs وTax. الخلط بين الاتنين من أكتر الأخطاء شيوعًا عند القراءة السريعة للقائمة.</p>
+      </div>
+
+      <div class="box term">
+        <span class="label">Operating Profit: ليه مهم؟</span>
+        <p>بيفصل قوة النشاط الأساسي عن تأثير التمويل والبنود الأخرى. شركة عندها Net Profit = 500 مليون، لكن جزء كبير منه جاي من بيع أصل أو مكسب استثنائي، بينما Operating Profit = 100 مليون بس، صورتها مختلفة تمامًا عن شركة تانية عندها Operating Profit = 500 مليون من نشاطها الأساسي نفسه.</p>
+      </div>
+
+      <div class="box example">
+        <span class="label">مثال: شركتين بنفس الربح التشغيلي، مخاطر مختلفة</span>
+        <p>Company A: Operating Profit = 500، Finance Costs = 50. Company B: Operating Profit = 500، Finance Costs = 300. الشركتين عندهم نفس قوة النشاط التشغيلي، لكن المخاطر المالية مختلفة جدًا: الشركة B بتاكل جزء كبير من ربحها التشغيلي في تكلفة التمويل، يعني هي أكتر حساسية لأي ضغط على السيولة أو ارتفاع في أسعار الفائدة.</p>
+      </div>
+
+      <p><strong>Finance Costs</strong> هي تكاليف التمويل، أشهرها فوائد القروض. لو لقيت Finance Income بدل كده، فده دخل من فوائد مستلمة، وهو بند مختلف (المطلوب في التاسك هو Finance Costs فقط).</p>
+
+      <h2 id="s14"><span class="n">14</span>صافي الربح وربحية السهم</h2>
+
+      <div class="box term">
+        <span class="label">EPS: Earnings Per Share (ربحية السهم)</span>
+        <p>نصيب السهم من الأرباح وفق طريقة حساب EPS. <strong>Basic EPS</strong> يعتمد على الأساس الأساسي لعدد الأسهم. <strong>Diluted EPS</strong> بيحاول يعكس تأثير أدوات ممكن تزود عدد الأسهم مستقبلًا. المطلوب في التاسك هو Basic EPS.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">Basic EPS في التاسك، مش قاعدة عامة لكل تحليل</span>
+        <p>اختيار Basic EPS هنا تعليمات خاصة بالتاسك، مش معناه إن Basic EPS دائمًا أهم من Diluted EPS في كل تحليل استثماري. في بعض الحالات (شركات عندها أدوات تحويلية كبيرة) الـDiluted EPS بيدي صورة أدق.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">EPS زاد؟ اسأل ليه قبل ما تفرح</span>
+        <p>EPS ممكن يزيد لأن الأرباح زادت فعلًا، أو لأن عدد الأسهم المستخدم في الحساب قل (زي إعادة شراء أسهم). الحالتين مختلفتين تمامًا من ناحية الدلالة، فمش صح تقول "EPS زاد، يبقى الشركة ممتازة" من غير ما تفهم السبب.</p>
+      </div>
+
+      <div class="box rule">
+        <span class="label">أهم بنود قائمة الدخل في التاسك</span>
+        <p>Revenue/Sales · Cost of Sales · Gross Profit · Net Profit · Basic EPS · Operating Profit · Finance Costs. مش مطلوب: Net Profit Before Tax، Finance Income، أرباح فروق العملة، أو Diluted EPS.</p>
+      </div>
+
+      <h2 id="s15"><span class="n">15</span>الأقواس والأرقام السالبة</h2>
+
+      <div class="box term">
+        <span class="label">قاعدة القوسين</span>
+        <p>الرقم بين قوسين، مثل (60)، معناه رقم سالب أو تدفق خارج من الشركة. مثال: Sales = 100، Cost of Sales = (60)، فـGross Profit = 100 − 60 = 40. نفس القاعدة مع أي مبلغ دفعته الشركة، زي شراء أصل ثابت يظهر بين قوسين في قائمة التدفقات النقدية.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">القوسين مش دايمًا معناه "خسارة"</span>
+        <p>الأقواس طريقة عرض للمبالغ السالبة أو الخصومات أو التدفقات الخارجة حسب طبيعة البند، مش وصف أخلاقي للرقم. لازم تقرا البند نفسه والسياق حواليه قبل ما تحكم إن الرقم ده "حاجة وحشة".</p>
+      </div>
+
+      <h2 id="s16"><span class="n">16</span>القائمة الثالثة: قائمة التدفقات النقدية</h2>
+
+      <div class="box term">
+        <span class="label">Cash Flow Statement (قائمة التدفقات النقدية)</span>
+        <p>بتجاوب على سؤال مختلف: الكاش اتحرك إزاي فعليًا خلال الفترة؟ وبتتقسم لـ3 أقسام.</p>
+      </div>
+
+      <table>
+        <tr><th>القسم</th><th>معناه</th></tr>
+        <tr><td>Operating Activities</td><td>فلوس من النشاط التشغيلي الأساسي: كاش من العملاء، مدفوعات للموردين والمصروفات</td></tr>
+        <tr><td>Investing Activities</td><td>شراء أو بيع أصول ثابتة واستثمارات</td></tr>
+        <tr><td>Financing Activities</td><td>قروض، سداد ديون، توزيعات أرباح، تمويل بحقوق ملكية</td></tr>
+      </table>
+
+      <p>وفي النهاية: <strong>Cash & Cash Equivalents at End of Year</strong>، النقدية وما في حكمها المتبقية فعليًا آخر الفترة.</p>
+
+      <div class="box rule">
+        <span class="label">ليه Operating Cash Flow هو الأهم للمحلل</span>
+        <p>لأنه بيقول لك هل النشاط الأساسي للشركة فعليًا بيولد كاش، مش بس بيسجل ربح محاسبي. شركة بتبيع وتحقق أرباح محاسبية لكن ما بتحصلش كاش كافٍ، محتاجة فحص أعمق.</p>
+      </div>
+
+      <div class="box term">
+        <span class="label">شراء Fixed Assets: ليه بيظهر بالسالب</span>
+        <p>لو الشركة اشترت ماكينة بـ10 مليون، فهي دفعت كاش، فده Investing Cash Outflow ويظهر بين قوسين. لكن شراء الماكينة لا يعني أن الشركة سجلت 10 مليون كمصروف كامل فورًا في قائمة الدخل: الماكينة أصل، وبتتاكل تكلفتها تدريجيًا عبر الزمن عن طريق <strong>Depreciation (الإهلاك)</strong> على مدار عمرها الإنتاجي.</p>
+      </div>
+
+      <div class="box rule">
+        <span class="label">Cash Level + Cash Source، مش الرقم بس</span>
+        <p>شركة عندها كاش كبير آخر السنة مش بالضرورة ممتازة. الكاش ده ممكن يكون جاي من Operating Cash Flow (الأفضل: نشاطها بيولد كاش حقيقي)، أو من قرض جديد، أو زيادة رأس مال، أو بيع أصل. نفس مستوى الكاش، دلالات مختلفة تمامًا حسب مصدره.</p>
+      </div>
+
+      <h2 id="s17"><span class="n">17</span>ليه صافي الربح مش هو الكاش</h2>
+      <p>ده أهم سؤال في السيشن كلها: لو Net Profit = مليون جنيه، ليه Operating Cash Flow ممكن يكون 800 ألف بس؟</p>
+
+      <div class="box term">
+        <span class="label">Accrual Accounting (أساس الاستحقاق المحاسبي)</span>
+        <p>القوائم المالية بتعتمد على أساس الاستحقاق: الإيرادات والمصروفات بيتم الاعتراف بيها وفق قواعد محاسبية عند تحقق شروط الاعتراف، مش بالضرورة لحظة تحرك الكاش فعليًا.</p>
+      </div>
+
+      <div class="box example">
+        <span class="label">مثال: بيع بضاعة من غير تحصيل فوري</span>
+        <p>الشركة باعت بضاعة بمليون جنيه، لكن العميل هيدفع بعد شهرين. الشركة ممكن تعترف بـRevenue = مليون في قائمة الدخل فورًا، بينما Cash Collected = صفر في نفس اللحظة. في Balance Sheet، Accounts Receivable بتزيد بمقدار المليون. النتيجة: Revenue زاد في قائمة الدخل، لكن الكاش الفعلي لم يدخل بنفس القيمة، وده أحد أسباب Net Profit ≠ Operating Cash Flow.</p>
+      </div>
+
+      <p>الفرق بين صافي الربح والتدفق النقدي التشغيلي ممكن يرجع كمان لأسباب تانية غير الحسابات المدينة: زيادة في المخزون، فروق توقيت، مصروفات غير نقدية (زي الإهلاك)، أو تغيرات في الحسابات الدائنة.</p>
+
+      <h2 id="s18"><span class="n">18</span>جودة الأرباح</h2>
+
+      <div class="box caution">
+        <span class="label">الفرق بين الربح والكاش مش تلاعب في حد ذاته</span>
+        <p>مجرد اختلاف Net Profit عن Operating Cash Flow حاجة طبيعية جدًا وبتحصل باستمرار حتى في شركات سليمة تمامًا. اللي يستحق التحقيق فعليًا هو لو الأرباح بتزيد باستمرار بينما Operating Cash Flow ضعيف أو سلبي أو أقل منها بشكل غير مبرر لفترة طويلة ومستمرة، مش مجرد فرق عابر في سنة واحدة.</p>
+      </div>
+
+      <div class="box term">
+        <span class="label">Earnings Quality (جودة الأرباح)</span>
+        <p>لما شركة تقول "حققنا مليار جنيه"، المحلل الجيد ما يقولش "ممتاز" على طول. بيسأل: كام من المليار ده اتحول فعليًا لكاش؟ كام منه متكرر ومستدام؟ كام منه جاي من النشاط الأساسي بدل مكاسب استثنائية؟ هل الحسابات المدينة أو المخزون بيتراكموا بشكل غير طبيعي؟ الإجابات دي مع بعض هي اللي بتحدد جودة الربح المعلن، مش رقمه المطلق.</p>
+      </div>
+
+      <h2 id="s19"><span class="n">19</span>العلاقة بين القوائم التلاتة ورأس المال العامل</h2>
+
+      <div class="box rule">
+        <span class="label">Mental Model للحفظ</span>
+        <p><strong>Balance Sheet:</strong> إيه اللي عندنا وإيه اللي علينا؟ (لحظة معينة)<br><strong>Income Statement:</strong> أداؤنا كان عامل إزاي خلال الفترة؟<br><strong>Cash Flow:</strong> الكاش اتحرك إزاي فعليًا؟</p>
+      </div>
+
+      <div class="box example">
+        <span class="label">مثال متكامل يربط القوائم التلاتة</span>
+        <p>الشركة باعت بضاعة بمليون جنيه، والعميل لم يدفع بعد: في Income Statement، Revenue بتزيد بالمليون. في Balance Sheet، Accounts Receivable بتزيد بنفس القيمة. في Cash Flow، الكاش ما دخلش بنفس القيمة. نفس الصفقة، ظاهرة في القوائم الثلاث بشكل مختلف لأنها بتحكي القصة من 3 زوايا.</p>
+      </div>
+
+      <p>نفس المنطق مع شراء ماكينة (Fixed Assets بتزيد في الميزانية، Investing Cash Flow بينزل، لكن مفيش Expense كامل فوري في قائمة الدخل)، أو أخذ قرض (Cash وLiabilities بيزيدوا مع بعض في نفس اللحظة، لكن القرض نفسه مش Revenue، وبس الفائدة عليه اللي بتظهر كـFinance Cost).</p>
+
+      <div class="box term">
+        <span class="label">Working Capital (رأس المال العامل)</span>
+        <p>العلاقة المستمرة بين Current Assets وCurrent Liabilities. أهم عناصره: المخزون، الحسابات المدينة، الحسابات الدائنة، والكاش. لما المخزون يزيد مثلًا، ده مش مجرد "أصل زاد"، ده ممكن يكون معناه إن كاش الشركة اتحبس في بضاعة لسه ما اتباعتش، وهو نفس المنطق اللي بيربط زيادة الحسابات المدينة بسؤال: هل الشركة بتحصل فلوسها فعلًا ولا لأ؟</p>
+      </div>
+
+      <h2 id="s20"><span class="n">20</span>القيمة الاسمية والسوقية والدفترية</h2>
+      <p>3 مفاهيم مختلفة تمامًا، وسهل الخلط بينهم:</p>
+
+      <table>
+        <tr><th>المفهوم</th><th>معناه</th></tr>
+        <tr><td>Par Value (القيمة الاسمية)</td><td>قيمة اسمية ثابتة مرتبطة بهيكل رأس المال، ما بتتغيرش على مدار السنين ومش سعر السهم في البورصة</td></tr>
+        <tr><td>Market Value / Market Price (القيمة السوقية)</td><td>السعر اللي السوق بيسعر بيه السهم فعليًا، بيتأثر بالعرض والطلب والتوقعات والأخبار</td></tr>
+        <tr><td>Book Value (القيمة الدفترية)</td><td>صافي الأصول (Equity) بحسب القياس المحاسبي، مقياس محاسبي مش نقدي</td></tr>
+      </table>
+
+      <div class="box term">
+        <span class="label">Book Value per Share</span>
+        <p>بشكل مبسط: حقوق الملكية العائدة للمساهمين مقسومة على عدد الأسهم ذي الصلة. لو الشركة اتصفت بعد سداد كل التزاماتها، ده تقريبًا نصيب كل سهم النظري من المتبقي لحقوق المساهمين.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">Book Value مش معناها "فلوس في الخزنة"</span>
+        <p>لو Book Value = 20 جنيه للسهم، ده مش معناه إن الشركة معاها 20 جنيه كاش لكل سهم. الـBook Value مرتبط بصافي الأصول (اللي ممكن تكون مباني ومكن ومخزون وحسابات مدينة)، مش بالكاش الفعلي المتاح.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">Market Price ممكن يختلف كتير عن Book Value، وده طبيعي</span>
+        <p>لو Market Price أعلى من Book Value per Share، ده مش معناه إن السوق غلطان. السوق ممكن يكون بيسعر نمو مستقبلي، قوة العلامة التجارية، أصول غير ملموسة، أو ميزة تنافسية، وهي حاجات مش دايمًا ظاهرة بالكامل في القيمة الدفترية المحاسبية. الاتنين ببساطة بيقيسوا حاجات مختلفة.</p>
+      </div>
+
+      <p>لاستخراج Market Price تاريخيًا، الطريقة العملية هي جلب سعر الإغلاق (Closing Price) في آخر يوم تداول من كل سنة، عشان تبقى عندك نقطة زمنية ثابتة تقارن بيها عبر السنين.</p>
+
+      <div class="box caution">
+        <span class="label">عدد الأسهم: انتبه للتعريف المستخدم</span>
+        <p>لما تدور على عدد أسهم الشركة، هتلاقي مصطلحات قريبة من بعضها لكن مش مترادفة بالضبط: <strong>Issued Shares</strong> (الأسهم المصدرة)، <strong>Outstanding Shares</strong> (الأسهم القائمة فعليًا في السوق)، و<strong>Treasury Shares</strong> (أسهم الخزينة اللي الشركة اشترتها من السوق واحتفظت بيها). الفروق بينهم محاسبية وممكن تأثر على حسابات مثل EPS وBook Value per Share، فاستخدم نفس التعريف المطلوب في التاسك أو النموذج اللي بتشتغل عليه بثبات.</p>
+      </div>
+
+      <h2 id="s21"><span class="n">21</span>أرقام الشيت وهيكل الإكسل</h2>
+      <p>من كل قائمة، الأرقام المطلوبة بالظبط:</p>
+
+      <table>
+        <tr><th>القائمة</th><th>الأرقام المطلوبة</th></tr>
+        <tr><td>Balance Sheet</td><td>Total Assets · Current Assets · Total Liabilities · Current Liabilities · Inventory · Total Equity</td></tr>
+        <tr><td>Income Statement</td><td>Revenue/Sales · Cost of Sales · Gross Profit · Net Profit · Basic EPS · Operating Profit · Finance Costs</td></tr>
+        <tr><td>Cash Flow</td><td>Purchase of Fixed Assets · Net Cash Flow from Operating Activities · Cash & Cash Equivalents (نهاية السنة)</td></tr>
+        <tr><td>Other</td><td>Total Debt · Market Price · Par Value · Book Value · عدد الأسهم</td></tr>
+      </table>
+
+      <div class="box caution">
+        <span class="label">ليه Total Debt بس بييجي من التطبيق مش القوائم؟</span>
+        <p>المحاضر استثنى بند إجمالي الديون وقال ناخده من تطبيق التداول لأنه أسهل استخراجًا هناك بالشكل المطلوب في الشيت. لكن القاعدة العامة تفضل: القوائم المالية هي المصدر الرسمي الأساسي للأرقام المحاسبية، والتطبيق مصدر مساعد لبيانات السعر والشارت والدين تحديدًا، مش بديل عن القوائم في باقي الأرقام.</p>
+      </div>
+
+      <div class="box rule">
+        <span class="label">هيكل الإكسل: جدولين</span>
+        <p><strong>Table 1 (Raw Data):</strong> الأرقام الخام اللي استخرجناها من القوائم مباشرة، سنة بسنة. <strong>Table 2 (Financial Ratios):</strong> النسب المالية اللي هتتحسب بناءً على بيانات الجدول الأول. السيشن دي هدفها استخراج البيانات (Table 1) بس، والسيشن الجاية هتستخدمها في حساب النسب (Table 2). القاعدة: متستعجلش تحسب رقم قبل ما تفهم منين طالع وبيمثل إيه.</p>
+      </div>
+
+      <h2 id="s22"><span class="n">22</span>التاسك: MOPCO عمليًا</h2>
+      <p>التطبيق العملي كان على شركة <strong>MOPCO (موبكو)</strong>، من كبار مصدري اليوريا (سماد) عالميًا.</p>
+
+      <div class="box caution">
+        <span class="label">MOPCO مثال تعليمي، مش توصية</span>
+        <p>المحاضر استخدم موبكو كـCase Study بس عشان يوضح فين تلاقي القوائم وإزاي تستخرج منها الأرقام: إزاي تختار Annual، إزاي تختار Consolidated، وإزاي تنقل الأرقام للإكسل. اختيار الشركة كمثال شرح لا يعني إنها توصية استثمارية بأي شكل.</p>
+      </div>
+
+      <p>خطوات التاسك بالترتيب:</p>
+      <ol>
+        <li>ادخل على موقع الشركة (Search: "MOPCO Investor Relations")، واختار قسم Financial Reports.</li>
+        <li>افتح آخر تقرير مالي متاح، واختار Consolidated وAnnual (Full Year)، مش Standalone ومش ربع سنوي.</li>
+        <li>افتح القوائم الثلاث بالترتيب: Balance Sheet ثم Income Statement ثم Cash Flow Statement. تجاهل الإيضاحات المتممة في المرحلة دي.</li>
+        <li>انقل الأرقام المطلوبة لجدول الـRaw Data في الإكسل، بدءًا من الأحدث.</li>
+        <li>كرر لنفس السنة الأقدم المطلوبة، مع مراعاة قاعدة "الجديد للقديم" عند وجود اختلاف في رقم مقارنة بسبب Restatement.</li>
+      </ol>
+
+      <div class="box rule">
+        <span class="label">التاسك المطلوب فعليًا: سنتين بس</span>
+        <p>تعبئة الجدول لسنتين: <strong>2024 و2023</strong> فقط. مش شرط تفتح تقرير 2025 عشان تجيب رقم 2024: تقدر تفتح تقرير 2024 السنوي مباشرة وتاخد منه عمود 2024 وعمود المقارنة 2023. المهم إنك ملتزم بقاعدة "أحدث قائمة متاحة" للبيانات اللي بتستخرجها. مدى السنوات الأطول (من 2019) موضوع هيتكلم عنه المحاضر لاحقًا مع النسب المالية، لكن تاسك السيشن دي محدد بسنتين بس عشان تتمرن على آلية النقل نفسها.</p>
+      </div>
+
+      <h2 id="s23"><span class="n">23</span>الاختيار المبدئي والفرضية الاستثمارية</h2>
+
+      <div class="box caution">
+        <span class="label">ما تعملش Excel لكل شركات السوق</span>
+        <p>التحليل المالي بالتفصيل ده مش بيتعمل على كل شركات السوق دفعة واحدة. فيه مرحلة اسمها <strong>Initial Screening (الاختيار المبدئي)</strong> قبل كده، الهدف منها تحديد أي الشركات أصلًا تستحق التحليل التفصيلي. المسار الكامل يبقى: السوق ككل، ثم الاختيار المبدئي، ثم الشركات المختارة، ثم القوائم المالية والإكسل، ثم النسب المالية، ثم التحليل الأساسي الكامل، ثم التقييم. تفاصيل مرحلة الاختيار المبدئي هتتشرح في سيشن لاحقة، فمتستعجلش تطبقها دلوقتي من غير السياق الكامل.</p>
+      </div>
+
+      <div class="box term">
+        <span class="label">Investment Thesis (الفرضية الاستثمارية)</span>
+        <p>لما تشتري شركة بناءً على Fundamental Analysis، بيبقى عندك فرضية: "أنا متوقع الشركة تحقق كذا بسبب كذا"، زي نمو المبيعات أو تحسن الهوامش أو انخفاض الدين. Fundamental Analysis مش تحليل بيتعمل مرة واحدة وخلاص: كل ما تنزل سنة مالية جديدة، لازم تحدث التحليل وتراجع الأرقام (الإيرادات، الأرباح، الأصول، الالتزامات، التدفقات النقدية، الدين)، وتسأل: هل الفرضية القديمة لسه صحيحة؟ لو البيانات الجديدة غيرت القصة، لازم تراجع الفرضية نفسها، مش تتمسك بيها لمجرد إنك اشتريت السهم أوريدي.</p>
+      </div>
+
+      <h2 id="s24"><span class="n">24</span>تنبيهات على كلام المحاضر</h2>
+      <p>زي كل سيشن، دي مش تصحيح لكلام المحاضر، لكن توضيح للأماكن اللي اتقالت بشكل تبسيطي عشان متاخدهاش كقاعدة مطلقة:</p>
+
+      <div class="box caution">
+        <span class="label">"من 2019 تحديدًا" تفضيل شخصي، مش قاعدة</span>
+        <p>اختيار سنة البداية (2019، قبل كورونا) تفضيل شخصي للمحاضر بناءً على خبرته، مش قاعدة محاسبية ثابتة. الفكرة الأهم هي أخذ مدى زمني كافٍ يشمل فترة قبل وبعد أي حدث استثنائي كبير، مش الرقم نفسه.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">تصحيح تراكمي: الالتزامات المتداولة ومدة الـ6 شهور</span>
+        <p>زي ما اتوضح في القسم الخاص بالالتزامات المتداولة أعلاه، الإشارة لمدة "6 شهور" في الشرح المبسط أقل من المعيار المحاسبي الفعلي (قريب من 12 شهرًا في الحالات ذات الصلة)، فمتاخدش الرقم ده حرفيًا.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">"زيادة الأصول المتداولة كويسة" بشكل عام بس</span>
+        <p>الكلام ده صحيح كمبدأ عام، لكن لو الزيادة كلها جاية من بند واحد بعينه (زي مخزون متراكم مش بيتباع)، الصورة مختلفة تمامًا عن زيادة في الكاش نفسه أو أصول قابلة للتسييل الفوري.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">Consolidated في التاسك، مش قاعدة عامة لكل تحليل</span>
+        <p>اختيار Consolidated خاص بهدف هذا التمرين (رؤية الكيان الاقتصادي ككل). القرار الفعلي بين Consolidated وStandalone بيتحدد حسب هدف التحليل في كل مرة.</p>
+      </div>
+
+      <h2 id="s25"><span class="n">25</span>خلاصة السيشن واللي جاي</h2>
+
+      <div class="box rule">
+        <span class="label">أهم قاعدة من السيشن: متحكمش على شركة برقم واحد</span>
+        <p>Assets زادت وحدها ما يعنيش الشركة ممتازة. Debt زاد وحده ما يعنيش الشركة سيئة. Inventory زاد وحده ما يعنيش مشكلة. Profit زاد وحده ما يعنيش نجاح. السؤال دايمًا: ليه الرقم ده اتحرك؟ إيه علاقته بباقي الأرقام؟ هل الحركة دي مستمرة ولا استثنائية؟</p>
+      </div>
+
+      <p>لو هتاخد جملة واحدة بس من السيشن دي:</p>
+
+      <div class="box rule">
+        <span class="label">جوهر السيشن</span>
+        <p>ما تبصش على الشركة وتسأل "بتكسب كام؟" بس. اسأل: بتجيب فلوسها منين، بتكسب من نشاطها الأساسي قد إيه، أصولها ممولة بإيه، عليها ديون قد إيه، أرباحها بتتحول لكاش فعلي قد إيه، والأرقام دي كلها ماشية في اتجاه إيه عبر الزمن.</p>
+      </div>
+
+      <p>السيشن الجاية هتبني على الأرقام اللي جمعناها النهارده (Table 1: Raw Data) وتحولها لحاجة اسمها <strong>Financial Ratios (النسب المالية)</strong>: أدوات المقارنة اللي هتقول لك فعليًا هل الشركة قوية ولا لأ، مش مجرد رقم منفرد من غير سياق.</p>
+
+      <div class="flow-panels">
+        <div class="flow-panel">
+          <div class="panel-eyebrow">اتعملت النهارده</div>
+          <div class="panel-title">SESSION 02</div>
+          <div class="flow-steps">
+            <div class="flow-step hl">Fundamental Analysis Deep Dive</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">Balance Sheet</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">Income Statement</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">Cash Flow Statement</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">Par / Market / Book Value</div>
+          </div>
+        </div>
+
+        <div class="flow-panel">
+          <div class="panel-eyebrow">الجاي</div>
+          <div class="panel-title">SESSION 03 وما بعدها</div>
+          <div class="flow-steps">
+            <div class="flow-step hl">Financial Ratios</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">Quality of Earnings</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">Initial Screening بالتفصيل</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">Valuation → Technical Analysis</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="session-nav">
+        <a href="index.html">← الرئيسية</a>
+        <a href="glossary.html">قاموس المصطلحات ↦</a>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<footer>
+  SESSION 02 · مقدمة التحليل الأساسي والقوائم المالية · دفتر بورصة شخصي متجدد
+</footer>
+
+<script src="interactions.js"></script>
+<script>
+  // تفعيل الرابط النشط في السايدبار حسب مكان التمرير
+  const links = document.querySelectorAll('.side-list a');
+  const sections = Array.from(links).map(l => document.querySelector(l.getAttribute('href')));
+  function setActiveLink(){
+    let idx = 0;
+    sections.forEach((sec, i) => {
+      if (sec && sec.getBoundingClientRect().top < 140) idx = i;
+    });
+    links.forEach(l => l.classList.remove('active'));
+    if (links[idx]) links[idx].classList.add('active');
+  }
+  window.addEventListener('scroll', setActiveLink);
+  setActiveLink();
+</script>
+
+</body>
+</html>

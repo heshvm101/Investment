@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سيشن 3: النسب المالية والتقييم وجودة الأرباح | دفتر البورصة والاستثمار</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">هش.بورصة</span>
+      <span class="brand-name">دفتر البورصة والاستثمار</span>
+      <span class="brand-sub">SESSION LOG · EGX</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">الرئيسية</a>
+      <details class="nav-dropdown">
+        <summary class="active"><span class="caret">▾</span> السيشنز</summary>
+        <div class="nav-dropdown-menu">
+          <a href="session-01.html"><span class="num">01</span> مقدمة البورصة</a>
+          <a href="session-02.html"><span class="num">02</span> التحليل الأساسي والقوائم المالية</a>
+          <a href="session-03.html" class="active"><span class="num">03</span> النسب المالية والتقييم</a>
+          <span class="locked"><span class="num">04</span> لسه هتضاف</span>
+        </div>
+      </details>
+      <a href="glossary.html">القاموس</a>
+    </nav>
+  </div>
+  <div class="progress-fill" id="progress-fill"></div>
+</div>
+
+<div class="shell with-side">
+  <aside class="side">
+    <div class="side-title">SESSION 03 · الفهرس</div>
+    <ul class="side-list" id="side-list">
+      <li><a href="#s0">الصورة الكبيرة: من Input للقرار</a></li>
+      <li><a href="#s1">جيب إجمالي الديون من TradingView</a></li>
+      <li><a href="#s2">قواعد إدخال البيانات في الإكسل</a></li>
+      <li><a href="#s3">الأرقام السالبة الثلاثة الاستثنائية</a></li>
+      <li><a href="#s4">عدد الأسهم مش رقم ثابت</a></li>
+      <li><a href="#s5">أنواع رأس المال</a></li>
+      <li><a href="#s6">زيادة رأس المال: مش كويسة دايمًا</a></li>
+      <li><a href="#s7">3 أنواع مقارنات مالية</a></li>
+      <li><a href="#s8">4 مجموعات النسب المالية</a></li>
+      <li><a href="#s9">نسب السيولة الثلاث</a></li>
+      <li><a href="#s10">اقرا السيولة كاتجاه مش كرقم</a></li>
+      <li><a href="#s11">نسب الربحية</a></li>
+      <li><a href="#s12">نمو المبيعات ليس كل القصة</a></li>
+      <li><a href="#s13">الربحية مش كاش أوتوماتيك</a></li>
+      <li><a href="#s14">المديونية: دين كويس ودين وحش</a></li>
+      <li><a href="#s15">نسبة تغطية الفوائد</a></li>
+      <li><a href="#s16">التدفق النقدي الحر وصافي الدين</a></li>
+      <li><a href="#s17">نسبة النشاط: معدل دوران المخزون</a></li>
+      <li><a href="#s18">القيمة الدفترية ومكررها</a></li>
+      <li><a href="#s19">ربحية السهم ومكرر الربحية</a></li>
+      <li><a href="#s20">العائد على حقوق الملكية</a></li>
+      <li><a href="#s21">نسبة جودة الأرباح بالمعادلة</a></li>
+      <li><a href="#s22">العلاقات بين المؤشرات</a></li>
+      <li><a href="#s23">مثال متكامل محسوب بالكامل</a></li>
+      <li><a href="#s24">إزاي تكتب المعادلة في الإكسل</a></li>
+      <li><a href="#s25">التاسك: مدينة مصر</a></li>
+      <li><a href="#s26">تنبيهات على كلام المحاضر</a></li>
+      <li><a href="#s27">خلاصة ويلي بعده</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <div class="hero" style="padding-top:2.2rem;">
+      <div class="hero-eyebrow">SESSION 03 · فاندمنتال</div>
+      <h1>النسب المالية: من أرقام لقصة مالية</h1>
+      <p class="lead">السيشن اللي فاتت جمعنا فيها Inputs من القوائم المالية وحطيناها في الإكسل. النهارده هنستخدم الأرقام دي فعليًا: نحولها لنسب مالية لها معنى، ونفهم كل نسبة بترفلكت على إيه، عشان نقدر نبني قصة مالية كاملة عن الشركة بدل ما نبص على رقم واحد ونحكم بيه.</p>
+    </div>
+
+    <div class="content">
+
+      <h2 id="s0"><span class="n">00</span>الصورة الكبيرة: من Input للقرار</h2>
+      <p class="lede">الأرقام اللي جمعناها من القوائم المالية مش هي التحليل نفسه، هي مجرد مدخلات. المسار الكامل:</p>
+
+      <div class="box rule">
+        <span class="label">Inputs → Calculations → Ratios → Interpretation → Decision</span>
+        <p>مثلًا: Current Assets وCurrent Liabilities هم الـInputs. Current Ratio هو الـOutput. إحنا مش بنجمع الأرقام لمجرد ما الجدول يتملى، لكن عشان نطلع منها مؤشرات تجاوب على أسئلة حقيقية: الشركة عندها سيولة كافية؟ مربحة؟ أرباحها مستدامة؟ اعتمادها على الديون مرتفع؟ بتستخدم أصولها بكفاءة؟ السهم غالي أو رخيص نسبيًا؟</p>
+      </div>
+
+      <p>وده الفرق بين <strong>Reading Financial Statements</strong> (قراءة القوائم) و<strong>Financial Analysis</strong> (التحليل المالي الفعلي).</p>
+
+      <h2 id="s1"><span class="n">01</span>جيب إجمالي الديون من TradingView</h2>
+      <p>بند واحد بس من كل الأرقام مش بييجي من القوائم المالية مباشرة: إجمالي الديون. طريقة استخراجه:</p>
+
+      <div class="box rule">
+        <span class="label">الخطوات على TradingView</span>
+        <p>افتح تطبيق TradingView، ادخل على Chart، ابحث عن الشركة، وتأكد إنها مرتبطة بـEGX لو بتدور على شركة مصرية. افتح Financials، استخدم خانة البحث، وابحث عن <strong>Total Debt</strong> بالظبط.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">تنبيه: متختارش "Total Debt per Share"</span>
+        <p>هتلاقي بندين متشابهين في الاسم: Total Debt وTotal Debt per Share. إحنا محتاجين إجمالي الديون للشركة ككل، مش نصيب السهم من الديون. اختيار البند الغلط هنا هيدخل رقم مختلف تمامًا في باقي حساباتك.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">انخفاض أو زيادة الديون مش حكم جاهز</span>
+        <p>لو Total Debt نزل من 7.35 مليار سنة 2019 لـ4.89 مليار سنة 2020، ده مش معناه تلقائيًا إن الشركة بقت أفضل، وزيادته مش معناها تلقائيًا إن الشركة بقت أسوأ. الأهم إنك تسأل: الشركة اقترضت ليه؟ الدين اتستخدم في إيه؟ تكلفته كام؟ الشركة بتولد كاش كفاية لسداد الفوائد والأصل؟ العائد من استخدام الدين أعلى من تكلفته؟</p>
+      </div>
+
+      <h2 id="s2"><span class="n">02</span>قواعد إدخال البيانات في الإكسل</h2>
+
+      <div class="box rule">
+        <span class="label">أرقام فقط داخل الخلايا</span>
+        <p>لو الخلية المفروض تحتوي 100 مليون جنيه، اكتب <code>100000000</code> فقط. متكتبش "100000000 EGP" ولا "100 مليون" ولا "100,000,000 EGP". إكسل محتاج القيمة كرقم خالص عشان يقدر يعمل عليها عمليات حسابية، وأي حرف أو رمز جنب الرقم بيخلي الخلية تتحول لنص (Text) بدل رقم.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">العلامة العشرية: نقطة إنجليزية، مش فاصلة</span>
+        <p>لو الرقم 11 ونص، اكتبه <code>11.5</code> بنقطة إنجليزية. لو كتبتها بفاصلة عربية، إكسل هيقراها كنص مش رقم، والمعادلات (قسمة، ضرب، نسب) هتطلع Error بدل ما تحسب.</p>
+      </div>
+
+      <h2 id="s3"><span class="n">03</span>الأرقام السالبة الثلاثة الاستثنائية</h2>
+
+      <div class="box rule">
+        <span class="label">3 بنود بتتكتب موجبة رغم إنها سالبة في القوائم</span>
+        <p>المصروفات/التكاليف (Expenses/Costs)، المصروفات التمويلية (Finance Costs)، وشراء الأصول الثابتة (Purchase of Fixed Assets). لو القائمة كاتبة الرقم بين قوسين زي (500)، في شيت الإكسل بتاعنا بنكتبه 500 موجب، من غير قوسين ومن غير إشارة سالبة.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">دي قاعدة خاصة ببناء الإكسل، مش قاعدة محاسبية عامة</span>
+        <p>السبب عملي بحت: بعض المعادلات في الشيت هتتعامل مع البند ده باعتباره قيمة هتُطرح، فلو دخلته سالب أصلًا، الطرح هيحوله لموجب ويقلب النتيجة. القاعدة دي خاصة بطريقة بناء هذا الشيت تحديدًا، ومش معناها إن المصروفات محاسبيًا بتتسجل كأرقام موجبة دايمًا؛ في القوائم المالية الفعلية بتظهر سالبة أو بين أقواس حسب طريقة العرض، زي ما اتشرح في السيشن اللي فاتت.</p>
+      </div>
+
+      <h2 id="s4"><span class="n">04</span>عدد الأسهم مش رقم ثابت</h2>
+
+      <div class="box caution">
+        <span class="label">جيب عدد الأسهم المصدرة لكل سنة على حدة</span>
+        <p>ما تفترضش إن عدد الأسهم المصدرة ثابت عبر السنين. ممكن يتغير بسبب إصدار أسهم جديدة، زيادة رأس مال، تجزئة أسهم (Stock Split)، أسهم منحة (Bonus Shares)، أو إجراءات أخرى. عدد الأسهم بيدخل في حساب مؤشرات زي EPS وBook Value per Share، فلو الشركة نفسها حققت نفس مستوى الأرباح لكن عدد الأسهم زاد، بعض المؤشرات لكل سهم ممكن تتغير حتى لو أداء الشركة الفعلي ما اتغيرش.</p>
+      </div>
+
+      <h2 id="s5"><span class="n">05</span>أنواع رأس المال</h2>
+      <p>قبل ما نتكلم عن زيادة رأس المال، لازم نفهم أنواعه:</p>
+
+      <table>
+        <tr><th>النوع</th><th>معناه</th></tr>
+        <tr><td>Authorized Capital (رأس المال المصرح به)</td><td>الحد الأقصى لرأس المال المسموح للشركة تصدره وفق نظامها الأساسي والإطار القانوني</td></tr>
+        <tr><td>Issued Capital (رأس المال المصدر)</td><td>الجزء الذي تم إصداره فعليًا من رأس المال المصرح به</td></tr>
+        <tr><td>Paid-up Capital (رأس المال المدفوع)</td><td>الجزء الذي تم دفعه فعليًا وفق شروط الإصدار</td></tr>
+      </table>
+
+      <p>بصورة مبسطة: <strong>Paid-up Capital ⊆ Issued Capital ⊆ Authorized Capital</strong>، لكن التفاصيل القانونية الدقيقة تختلف حسب النظام القانوني وشروط كل إصدار.</p>
+
+      <h2 id="s6"><span class="n">06</span>زيادة رأس المال: مش كويسة دايمًا</h2>
+      <p>زيادة رأس المال غالبًا إشارة إيجابية: كل ما رأس المال أكبر، كل ما الشركة قدرت تتصرف بشكل أفضل. وبتحصل إما لأن الشركة حققت أرباحًا واحتجزتها، أو أصدرت أسهمًا جديدة، أو دخل لها تمويل جديد.</p>
+
+      <div class="box caution">
+        <span class="label">Capital Increase ≠ Automatically Good</span>
+        <p>لو الشركة أصدرت أسهمًا جديدة، ممكن يحصل <strong>Dilution (تخفيف الملكية)</strong>: عدد الأسهم يزيد، وبالتالي نصيب السهم الواحد من الأرباح أو حقوق الملكية ممكن ينخفض لو الأرباح لم تنمُ بنفس القدر. فالسؤال مش بس "رأس المال زاد؟"، لكن "زاد ليه؟ وهل الزيادة دي خلقت قيمة فعلية للمساهمين ولا خففت نصيبهم؟"</p>
+      </div>
+
+      <h2 id="s7"><span class="n">07</span>3 أنواع مقارنات مالية</h2>
+
+      <table>
+        <tr><th>النوع</th><th>الفكرة</th></tr>
+        <tr><td>Horizontal Analysis (التحليل الأفقي)</td><td>مقارنة نفس البند عبر الزمن، سنة بسنة (مثلًا 2025 مقابل 2024)</td></tr>
+        <tr><td>Vertical Analysis (التحليل الرأسي)</td><td>البند ده يمثل كام% من بند رئيسي؟ (مثلًا Cost of Sales = 60% من Sales)</td></tr>
+        <tr><td>Ratio Analysis (تحليل النسب المالية)</td><td>ربط أرقام مختلفة ببعض لطلوع مؤشر له معنى، بدل النظر لكل رقم لوحده</td></tr>
+      </table>
+
+      <div class="box caution">
+        <span class="label">التحليل الأفقي وحده مش كفاية</span>
+        <p>معرفة إن Revenue زاد من 100 لـ120 لـ150 عبر 3 سنين مش كفاية. لسه محتاج تعرف: الأرباح زادت؟ التكاليف زادت؟ الكاش زاد؟ الدين زاد؟ هامش الربح تحسن؟ الزيادة جاية من النشاط الأساسي ولا من عنصر استثنائي؟ وده بالظبط سبب أهمية النسب المالية كنوع مقارنة ثالث وأعمق.</p>
+      </div>
+
+      <h2 id="s8"><span class="n">08</span>4 مجموعات النسب المالية الأساسية</h2>
+      <p>المحاضر حدد 4 مظلات رئيسية للنسب، وكل مجموعة منهم بترفلكت (تعكس) على جانب مختلف من صحة الشركة:</p>
+
+      <table>
+        <tr><th>المجموعة</th><th>بتقيس إيه</th></tr>
+        <tr><td>Liquidity Ratios (السيولة)</td><td>قدرة الشركة على مواجهة التزاماتها قصيرة الأجل، الملاءة المالية</td></tr>
+        <tr><td>Profitability Ratios (الربحية)</td><td>الشركة بتكسب قد إيه من مبيعاتها</td></tr>
+        <tr><td>Leverage / Debt Ratios (المديونية)</td><td>اعتماد الشركة على الدين، وقدرتها على خدمته</td></tr>
+        <tr><td>Activity Ratios (النشاط)</td><td>كفاءة مجلس الإدارة في استخدام موارد الشركة ومخزونها</td></tr>
+      </table>
+
+      <p>وهنضيف عليهم لاحقًا في نفس السيشن: قيم التقييم (Valuation)، مؤشرات التدفق النقدي، وجودة الأرباح. التحليل الحقيقي للشركة أبدًا ما بيعتمد على نسبة واحدة بمفردها.</p>
+
+      <h2 id="s9"><span class="n">09</span>نسب السيولة الثلاث</h2>
+      <p>السيولة بتجاوب على سؤال: معاك قد إيه مقابل اللي عليك؟ وهي مرتبة من الأقل عنفًا للأكثر عنفًا:</p>
+
+      <div class="box term">
+        <span class="label">Current Ratio (نسبة التداول / السيولة الجارية)</span>
+        <p><strong>Current Assets ÷ Current Liabilities</strong>. لو Current Assets = 200 وCurrent Liabilities = 100، فـCurrent Ratio = 2.0: كل جنيه من الالتزامات المتداولة يقابله جنيهين من الأصول المتداولة.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">2:1 قيمة مرجعية تعليمية، مش قاعدة عالمية</span>
+        <p>المحاضر استخدم 2:1 كمرجع في الكورس، لكن مفيش قاعدة عالمية تقول إن أي شركة أقل من 2 سيئة وأي شركة أعلى من 2 ممتازة. النسبة الطبيعية تختلف حسب القطاع، طبيعة النشاط، دورة التشغيل، سرعة تحصيل العملاء، وشروط الموردين. شركة تجزئة (Retail) وشركة صناعية ممكن يكون عندهم Current Ratio مختلف تمامًا، وكل واحد طبيعي بالنسبة لنشاطه هو.</p>
+      </div>
+
+      <div class="box term">
+        <span class="label">Quick Ratio (السيولة السريعة)</span>
+        <p><strong>(Current Assets − Inventory) ÷ Current Liabilities</strong>. أكثر تحفظًا من Current Ratio لأننا بنشيل المخزون، على اعتبار إنه أقل سيولة (محتاج وقت يتباع ويتحصل ويتحول لكاش، وممكن يواجه تأخير أو تقادم). المرجع التعليمي هنا حوالي 1:1، وكل ما زادت عبر السنين يكون أفضل.</p>
+      </div>
+
+      <div class="box term">
+        <span class="label">Cash Ratio (السيولة النقدية)</span>
+        <p>أعنف نسب السيولة: بتستخدم الكاش وما في حكمه فقط (من غير أي بند تاني من الأصول المتداولة) مقسومًا على الالتزامات المتداولة. بتجاوب: لو اعتمدت الشركة على النقد المتاح مباشرة بس، تقدر تغطي قد إيه من التزاماتها؟ مفيش رقم مرجعي ثابت هنا، لكن كل ما الاتجاه يزيد يكون أفضل. Cash Ratio منخفض مش معناه الشركة سيئة، ممكن تكون مستخدمة الكاش في المخزون أو التوسع أو سداد ديون بدل الاحتفاظ به.</p>
+      </div>
+
+      <h2 id="s10"><span class="n">10</span>اقرا السيولة كاتجاه، مش كرقم منفرد</h2>
+
+      <div class="box rule">
+        <span class="label">Trend أهم من Snapshot</span>
+        <p>ما تقولش "Current Ratio = 1.8 سنة 2025، يبقى الشركة كويسة". الأفضل تشوف السلسلة كاملة: 1.2 → 1.4 → 1.7 → 2.0 عبر 4 سنين، ده اتجاه إيجابي واضح. لكن لو السلسلة كانت 2.4 → 2.1 → 1.7 → 1.2، فده يحتاج تحقيق: هل الالتزامات المتداولة زادت؟ الكاش قل؟ المخزون تضخم؟ الحسابات المدينة زادت؟ الشركة اقترضت قصير الأجل؟</p>
+      </div>
+
+      <h2 id="s11"><span class="n">11</span>نسب الربحية</h2>
+      <p>لو السيولة بتجاوب "الشركة تقدر تدفع اللي عليها؟"، الربحية بتجاوب "الشركة بتكسب قد إيه؟" وده فرق جوهري: شركة ممكن تكون سيولتها عالية لكن ربحيتها ضعيفة، وشركة تانية ربحيتها عالية لكن سيولتها ضيقة مؤقتًا. محدش بيغني عن التاني.</p>
+
+      <div class="box term">
+        <span class="label">Gross Profit Margin (هامش مجمل الربح)</span>
+        <p><strong>Gross Profit ÷ Revenue × 100</strong>. لو Revenue = 1,000 وCost of Sales = 700، فGross Profit = 300 وGross Margin = 30%: من كل 100 جنيه مبيعات، يتبقى 30 جنيه بعد تكلفة المبيعات المباشرة. بيساعدك تفهم Pricing Power، اقتصاديات المنتج، والضغط على تكلفة المدخلات. لو الهامش نازل عبر السنين (35% ثم 30% ثم 24%)، ده ممكن يشير لارتفاع تكلفة المواد الخام، انخفاض الأسعار، زيادة المنافسة، أو ضعف القدرة التسعيرية، لكن لازم تبحث في السبب الفعلي.</p>
+      </div>
+
+      <div class="box term">
+        <span class="label">Net Profit Margin (هامش صافي الربح)</span>
+        <p><strong>Net Profit ÷ Revenue × 100</strong>. لو Revenue = 1,000 وNet Profit = 100، فNet Margin = 10%: كل 100 جنيه مبيعات ينتج عنهم 10 جنيه صافي ربح بعد كل المصروفات والتمويل والضرائب. هامش صافي الربح أهم من هامش مجمل الربح في الحكم النهائي على أداء الشركة.</p>
+      </div>
+
+      <h2 id="s12"><span class="n">12</span>نمو المبيعات ليس كل القصة</h2>
+
+      <div class="box example">
+        <span class="label">مثال: شركتين، نمو مبيعات مختلف، نمو ربح مختلف</span>
+        <p>Company A: Revenue من 100 لـ150 (نمو 50%)، لكن Net Profit من 10 لـ12 بس (نمو 20%). Company B: Revenue من 100 لـ130 (نمو 30%)، لكن Net Profit من 10 لـ20 (تضاعف). شركة A زودت مبيعاتها أكتر، لكن شركة B حسّنت ربحيتها بشكل أقوى بكتير. كمستثمر، B ممكن تكون أكثر إثارة للاهتمام من ناحية تحسّن الربحية. يعني نمو الإيرادات مهم، لكن جودة النمو (هل بيترجم لربح فعليًا) أهم.</p>
+      </div>
+
+      <h2 id="s13"><span class="n">13</span>الربحية مش كاش أوتوماتيك</h2>
+
+      <div class="box caution">
+        <span class="label">Net Profit = 100 مليون لا يعني كاش = 100 مليون</span>
+        <p>ممكن الشركة تسجل Net Profit عالي، لكن الكاش الناتج فعليًا من التشغيل يكون أقل بكتير، بسبب مبيعات بالأجل (Credit Sales)، زيادة في الحسابات المدينة أو المخزون، أو تغيرات في الحسابات الدائنة. الفكرة دي هي المدخل المباشر لمفهوم <strong>Earnings Quality</strong> اللي هنرجعله بالتفصيل لاحقًا في السيشن دي.</p>
+      </div>
+
+      <h2 id="s14"><span class="n">14</span>المديونية: دين كويس ودين وحش</h2>
+      <p>المديونية بتجاوب: الشركة بتمول نفسها قد إيه باستخدام الدين؟ لكن لازم نخرج من فكرة "الدين = حاجة وحشة"، لأن الدين ممكن يكون مفيد جدًا لو استُخدم صح.</p>
+
+      <div class="box rule">
+        <span class="label">Good Debt مقابل Bad Debt</span>
+        <p><strong>دين جيد:</strong> الشركة تقترض عشان توسع الإنتاج، تشتري مكن، تفتح مصنع، أو تمول مشروع يولد كاش، بشرط يكون العائد من الاستثمار أعلى من تكلفة التمويل. <strong>دين سيء:</strong> الاقتراض من غير ما يولد عائد كافٍ لخدمة الدين نفسه. الفكرة الأساسية: جودة الدين أهم من كميته وحدها.</p>
+      </div>
+
+      <div class="box term">
+        <span class="label">Debt-to-Equity Ratio (نسبة الدين إلى حقوق الملكية)</span>
+        <p><strong>Total Debt ÷ Shareholders' Equity × 100</strong>. لو Total Debt = 500 وEquity = 1,000، فDebt-to-Equity = 50%: إجمالي الدين يساوي نصف حقوق الملكية.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">ارتفاع Debt-to-Equity مش سيء دايمًا</span>
+        <p>ارتفاع النسبة يعني رافعة مالية أعلى (Higher Financial Leverage)، وده سلاح ذو حدين: مخاطر مالية أعلى، حساسية أكبر لأسعار الفائدة، لكن كمان عائد محتمل أعلى على حقوق الملكية لو استُخدمت الرافعة بنجاح. لو الشركة بتحقق عائد 10% والدين تكلفته 5%، التمويل بالدين مفيد. لكن لو تكلفة الدين ارتفعت فوق العائد الفعلي من استخدام الأموال، الوضع بينقلب لعكسه تمامًا.</p>
+      </div>
+
+      <h2 id="s15"><span class="n">15</span>نسبة تغطية الفوائد</h2>
+
+      <div class="box term">
+        <span class="label">Interest Coverage Ratio (نسبة تغطية الفوائد)</span>
+        <p><strong>Operating Profit ÷ Finance Costs</strong>. لو Operating Profit = 500 وFinance Costs = 100، فInterest Coverage = 5x: الربح التشغيلي يغطي الفوائد 5 مرات. كل ما الرقم أعلى، عادةً هامش الأمان أفضل. لكن برضه لازم تقارنه بالقطاع وباستقرار الأرباح عبر الزمن، مش كرقم منعزل.</p>
+      </div>
+
+      <h2 id="s16"><span class="n">16</span>التدفق النقدي الحر وصافي الدين</h2>
+
+      <div class="box term">
+        <span class="label">Free Cash Flow (FCF)</span>
+        <p><strong>Operating Cash Flow − Capital Expenditure (CapEx)</strong>. مثال: CFO = 800 مليون، CapEx = 500 مليون، فFCF = 300 مليون: الكاش المتبقي بعد تمويل الإنفاق الرأسمالي الأساسي. الشركة تقدر تستخدم الـFCF في سداد ديون، توزيعات أرباح، إعادة شراء أسهم، توسع، أو تراكم كاش.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">FCF مرتفع مش دايمًا أفضل بلا تحفظ</span>
+        <p>شركة في مرحلة توسع قوي ممكن يكون عندها FCF منخفض أو حتى سالب لأنها بتستثمر بقوة في CapEx. السؤال هنا مش "FCF عالي ولا لأ؟" لكن "الـCapEx ده بيولد نمو مستقبلي فعلي ولا لأ؟"</p>
+      </div>
+
+      <p><strong>FCF Margin = FCF ÷ Revenue × 100</strong>: النسبة من الإيرادات اللي اتحولت لتدفق نقدي حر. تحسّنها عبر الزمن عادةً مؤشر إيجابي.</p>
+
+      <div class="box term">
+        <span class="label">Net Debt (صافي الدين)</span>
+        <p><strong>Total Debt − Cash & Cash Equivalents</strong>. مثال: Debt = 1,000، Cash = 300، فNet Debt = 700: لو استخدمت الشركة كل الكاش المتاح في سداد جزء من الديون، يفضل عليها 700. انخفاضه غالبًا إيجابي من ناحية المخاطر المالية، لكن يحتاج سياق زي باقي المؤشرات.</p>
+      </div>
+
+      <h2 id="s17"><span class="n">17</span>نسبة النشاط: معدل دوران المخزون</h2>
+
+      <div class="box term">
+        <span class="label">Inventory Turnover (معدل دوران المخزون)</span>
+        <p>الصيغة المستخدمة في الكورس: <strong>Sales ÷ Inventory</strong>. لو Sales = 1,000 وInventory = 100، فTurnover = 10x: حجم المبيعات يساوي 10 أضعاف قيمة المخزون المستخدمة في الحساب.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">في المحاسبة المهنية، الصيغة الأدق مختلفة شوية</span>
+        <p>الصيغة الأكثر دقة في التحليل المالي الاحترافي عادةً: Cost of Goods Sold ÷ Average Inventory (متوسط المخزون بين بداية ونهاية الفترة)، مش Sales ÷ Inventory آخر الفترة فقط. استخدم صيغة الكورس في التاسك لأنها المطلوبة، لكن افهم إن التحليل الاحترافي قد يستخدم صيغة مختلفة قليلًا لغرض أدق.</p>
+      </div>
+
+      <p>ارتفاع معدل الدوران عادةً إيجابي: يعني المخزون بيتحرك بسرعة، طلب قوي، وعبء تخزين أقل. لكن ارتفاعه بشكل مبالغ فيه ممكن يكون علامة تحتاج بحث: هل عند الشركة نقص مخزون (Stock Shortage) بدل كفاءة حقيقية؟</p>
+
+      <h2 id="s18"><span class="n">18</span>القيمة الدفترية ومكررها</h2>
+
+      <div class="box term">
+        <span class="label">Book Value per Share (القيمة الدفترية للسهم)</span>
+        <p><strong>Shareholders' Equity ÷ Number of Issued Shares</strong>. مثال: Equity = 2 مليار، Issued Shares = مليار سهم، فBook Value per Share = 2 جنيه. كل ما الرقم أعلى، يعني نصيب كل سهم النظري من صافي أصول الشركة بعد سداد كل الالتزامات أكبر.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">Book Value مش ضمان كاش فعلي عند التصفية</span>
+        <p>القيمة الدفترية ليست بالضرورة الكاش اللي هتاخده فعليًا لو الشركة اتصفت. التصفية الفعلية ممكن تختلف بسبب أسعار بيع الأصول الفعلية، التزامات إضافية، تكاليف التصفية نفسها، أو انخفاض قيمة بعض الأصول (Impairment). المثال المبسط مفيد للفهم، لكنه تبسيط تعليمي مش رقم مضمون.</p>
+      </div>
+
+      <div class="box term">
+        <span class="label">P/B Ratio (مكرر القيمة الدفترية)</span>
+        <p><strong>Market Price per Share ÷ Book Value per Share</strong>. لو Market Price = 30 وBook Value = 15، فP/B = 2x: السوق بيسعر السهم عند ضعف قيمته الدفترية.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">P/B أقل من 1 مش دايمًا فرصة، وأعلى من 1 مش دايمًا سيئ</span>
+        <p>السوق مش بيسعر الأصول بس، هو بيسعر كمان الربحية، النمو المتوقع، المخاطر، الأصول غير الملموسة، والعائد على حقوق الملكية. Market Price أقل من Book Value ممكن يكون فرصة، لكن ممكن كمان يكون تحذير: ضعف أرباح، مشاكل في القطاع، ضعف جودة الأصول، أو مخاوف حوكمة. لازم تبحث في السبب قبل ما تحكم.</p>
+      </div>
+
+      <h2 id="s19"><span class="n">19</span>ربحية السهم ومكرر الربحية</h2>
+
+      <div class="box term">
+        <span class="label">EPS (ربحية السهم)</span>
+        <p><strong>Net Profit ÷ Number of Shares</strong>. لو Net Profit = مليار وShares = 500 مليون، فEPS = 2 جنيه للسهم.</p>
+      </div>
+
+      <div class="box example">
+        <span class="label">مثال: الربح زاد لكن EPS نزل</span>
+        <p>سنة 1: Net Profit = 100، Shares = 100، فEPS = 1. سنة 2: Net Profit = 150، Shares = 200، فEPS = 0.75. الشركة حققت أرباحًا أعلى فعليًا، لكن EPS انخفض لأن عدد الأسهم زاد بنسبة أكبر من نمو الربح. ده مثال مباشر على خطورة النظر لـNet Profit وحده من غير النظر لعدد الأسهم.</p>
+      </div>
+
+      <div class="box term">
+        <span class="label">P/E Ratio (مكرر الربحية)</span>
+        <p><strong>Market Price per Share ÷ EPS</strong>. لو Market Price = 30 وEPS = 3، فP/E = 10x: السوق يدفع 10 جنيه مقابل كل جنيه من الأرباح السنوية للسهم.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">P/E أقل من 10 مرجع تعليمي، مش قاعدة استثمارية عالمية</span>
+        <p>المحاضر استخدم 10x كمرجع في الكورس، وشرح الفكرة بتبسيط: لو الأرباح اتوزعت كلها، الرقم يشير تقريبًا لعدد السنوات اللازمة لاسترداد سعر الشراء من الأرباح. لكن ده تبسيط تعليمي، مش وعد فعلي، لأن الأرباح بتتغير، التوزيعات مش شرط تساوي EPS، والسعر نفسه بيتحرك. في التحليل الاحترافي، مفيش حد أقصى عالمي لـP/E يخلي أي سهم تحته "كويس" تلقائيًا: شركة P/E = 20 ممكن تكون أفضل استثمار من شركة P/E = 7 لو نموها أعلى، أرباحها أكثر استدامة، ديونها أقل، أو القطاع كله بيتداول عند مضاعفات أعلى. الـP/E لازم يتقارن بمتوسطه التاريخي للشركة نفسها، بمتوسط القطاع، وبالشركات المشابهة.</p>
+      </div>
+
+      <h2 id="s20"><span class="n">20</span>العائد على حقوق الملكية</h2>
+
+      <div class="box term">
+        <span class="label">ROE: Return on Equity (العائد على حقوق الملكية)</span>
+        <p><strong>Net Profit ÷ Shareholders' Equity × 100</strong>. لو Net Profit = 300 وEquity = 1,000، فROE = 30%: الشركة حققت عائد 30% على حقوق الملكية المستخدمة في الحساب.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">ROE عالي ممكن يكون بسبب رافعة مالية، مش ربحية حقيقية بس</span>
+        <p>ROE مرتفع ممكن يرجع لـ3 أسباب: ربحية قوية فعلًا، حقوق ملكية منخفضة نسبيًا، أو رافعة مالية عالية (اقتراض ضخم). لازم تربط ROE بنسبة الدين قبل ما تحكم: شركة ROE عالي بسبب اقتراض ضخم مختلفة تمامًا عن شركة ROE عالي بسبب ربحية تشغيلية قوية بدين منخفض.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">مقارنة ROE بفائدة البنك مرجع ذهني، مش مقارنة مباشرة</span>
+        <p>مقارنة ROE بعائد الودائع أو الشهادات البنكية (مثلًا ROE = 30% مقابل عائد بنكي حوالي 20%) ممكن تخلي الشركة تبدو جذابة كمرجع أولي سريع. لكن المقارنة دي مش مباشرة: العائد البنكي أقل مخاطرة بكتير، وROE مش كاش هيوصلك فعليًا كمساهم، والشركة لا تضمن نفس المستوى من العائد في المستقبل، وسعر السهم نفسه ممكن ينزل، والتوزيعات الفعلية ممكن تكون أقل من صافي الربح المحقق. ROE العالي مؤشر مهم، لكن لازم يدخل في صورة أكبر مع باقي المؤشرات.</p>
+      </div>
+
+      <h2 id="s21"><span class="n">21</span>نسبة جودة الأرباح بالمعادلة</h2>
+
+      <div class="box term">
+        <span class="label">Earnings Quality Ratio (نسبة جودة الأرباح)</span>
+        <p><strong>Operating Cash Flow ÷ Net Profit</strong>. لو Operating Cash Flow = 500 وNet Profit = 1,000، فEarnings Quality = 50%: كل جنيه صافي ربح يقابله 0.50 جنيه تدفق نقدي تشغيلي فعلي في نفس الفترة. كل ما النسبة تتحسن وتستقر عبر الزمن، غالبًا تكون جودة الأرباح أفضل.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">نسبة متراجعة تحتاج تحقيق، مش حكم فوري بالتلاعب</span>
+        <p>لو النسبة نزلت من 80% لـ70% لـ55% عبر 3 سنين متتالية، ده محتاج تحقيق فعلي، لكن ما تقولش فورًا "الشركة بتتلاعب". ممكن يكون السبب: عملاء لسه ما دفعوش، تراكم مخزون بسبب توسع، فروق توقيت طبيعية، أو تغيرات في رأس المال العامل. القاعدة: Ratio → سؤال → تحقيق، مش Ratio → حكم أوتوماتيكي.</p>
+      </div>
+
+      <h2 id="s22"><span class="n">22</span>العلاقات بين المؤشرات</h2>
+      <p>التحليل القوي مش حفظ معادلات منفصلة، لكن فهم إزاي المؤشرات دي بترتبط ببعض:</p>
+
+      <table>
+        <tr><th>العلاقة</th><th>القراءة الصحيحة</th></tr>
+        <tr><td>Profitability ↑ وROE ↑</td><td>كويس، لكن لازم تتأكد إن الزيادة مش راجعة لرافعة مالية عالية فقط</td></tr>
+        <tr><td>Debt ↑</td><td>راقب Finance Costs وInterest Coverage معاه مباشرة</td></tr>
+        <tr><td>Revenue ↑ لكن Net Margin ↓</td><td>الشركة بتبيع أكتر، لكن كل جنيه مبيعات بقى يحقق ربح أقل</td></tr>
+        <tr><td>Net Profit ↑ لكن CFO ↓</td><td>ابدأ تسأل عن Earnings Quality مباشرة</td></tr>
+        <tr><td>Inventory ↑↑ وInventory Turnover ↓</td><td>احتمال مشكلة حقيقية في تصريف المخزون</td></tr>
+        <tr><td>Debt ↑ وFCF ↑ بقوة</td><td>الاقتراض غالبًا جزء من توسع ناجح</td></tr>
+        <tr><td>Debt ↑ وFCF ↓</td><td>أكثر إثارة للقلق، يحتاج فحص أعمق</td></tr>
+      </table>
+
+      <div class="box rule">
+        <span class="label">أهم خطأ: الحكم بنسبة واحدة</span>
+        <p>ما تقولش "Current Ratio = 2، يبقى اشتري" ولا "P/E = 8، يبقى اشتري" ولا "ROE = 30%، يبقى اشتري". السهم مش امتحان اختيار من متعدد. التحليل الحقيقي هو مؤشرات متعددة + اتجاه عبر الزمن + سياق + تقييم، مع بعض في نفس اللحظة.</p>
+      </div>
+
+      <h2 id="s23"><span class="n">23</span>مثال متكامل محسوب بالكامل</h2>
+      <p>شركة افتراضية عندها الأرقام دي:</p>
+
+      <table>
+        <tr><th>البند</th><th>القيمة</th></tr>
+        <tr><td>Revenue</td><td>1,000</td></tr>
+        <tr><td>Gross Profit</td><td>300</td></tr>
+        <tr><td>Net Profit</td><td>100</td></tr>
+        <tr><td>Current Assets / Current Liabilities</td><td>400 / 200</td></tr>
+        <tr><td>Inventory</td><td>100</td></tr>
+        <tr><td>Total Debt / Equity</td><td>500 / 1,000</td></tr>
+        <tr><td>Operating Profit / Finance Costs</td><td>200 / 40</td></tr>
+        <tr><td>Operating Cash Flow / CapEx</td><td>180 / 80</td></tr>
+        <tr><td>Shares / Market Price</td><td>100 مليون / 15 جنيه</td></tr>
+      </table>
+
+      <p>النسب الناتجة: Current Ratio = 400/200 = <strong>2.0</strong> · Quick Ratio = (400−100)/200 = <strong>1.5</strong> · Gross Margin = 300/1,000 = <strong>30%</strong> · Net Margin = 100/1,000 = <strong>10%</strong> · Debt-to-Equity = 500/1,000 = <strong>50%</strong> · Interest Coverage = 200/40 = <strong>5x</strong> · FCF = 180−80 = <strong>100</strong> · EPS = 100م/100م = <strong>1 جنيه</strong> · P/E = 15/1 = <strong>15x</strong> · ROE = 100/1,000 = <strong>10%</strong> · Earnings Quality = 180/100 = <strong>180%</strong>.</p>
+
+      <div class="box rule">
+        <span class="label">القراءة الكاملة، مش رقم واحد</span>
+        <p>سيولة جيدة نسبيًا، ربحية موجودة، الدين موجود لكن مش حاكمين عليه من الرقم وحده، تغطية الفوائد 5 مرات بتديها هامش أمان مبدئي، FCF موجب، التدفق النقدي التشغيلي أعلى من صافي الربح في السنة دي (جودة أرباح قوية)، لكن P/E = 15x وROE = 10% محتاجين مقارنة بالقطاع والشركات المماثلة قبل أي حكم نهائي. ده هو التحليل الحقيقي، مش "الشركة كسبت 100 مليون يبقى كويسة".</p>
+      </div>
+
+      <h2 id="s24"><span class="n">24</span>إزاي تكتب المعادلة في الإكسل</h2>
+
+      <div class="box rule">
+        <span class="label">الصيغة الأساسية والأقواس</span>
+        <p>لو Current Assets في الخلية B7 وCurrent Liabilities في B8، تكتب <code>=B7/B8</code> وتدوس Enter. لو عايز تحول الناتج لنسبة مئوية، ممكن <code>=B7/B8*100</code> أو استخدام تنسيق النسبة المئوية في إكسل حسب تصميم الشيت. لما يكون فيه طرح قبل القسمة، زي Quick Ratio، الأقواس ضرورية: <code>=(B7-B9)/B8</code> مختلفة تمامًا عن <code>=B7-B9/B8</code> لأن إكسل بينفذ القسمة قبل الطرح لو مفيش أقواس.</p>
+      </div>
+
+      <p>بعد ما تكتب المعادلة لسنة واحدة، حدد الخلية، اعمل Copy، حدد خلايا السنوات التانية، واعمل Paste. إكسل هيغير الـReferences تلقائيًا حسب موقع كل خلية، وده أسرع وأدق بكتير من إعادة كتابة كل معادلة يدويًا.</p>
+
+      <h2 id="s25"><span class="n">25</span>التاسك: مدينة مصر</h2>
+      <p>التطبيق العملي للسيشن دي على شركة <strong>مدينة مصر</strong>.</p>
+
+      <div class="box rule">
+        <span class="label">المطلوب: جدولين كاملين لسنتين</span>
+        <p>تملأ شيت الإكسل لسنتين بس: <strong>2025 و2024</strong>. الجدول الأول (Raw Data / Inputs) والجدول الثاني (Financial Ratios / Outputs) للسنتين الاتنين مع بعض. لو لسه ما عملتش تاسك السيشن اللي فاتت (MOPCO)، لازم تخلصه هو الأول قبل ما تبدأ تاسك مدينة مصر، لأن كل سيشن مبني على اللي قبلها.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">ذاكر السيشن اللي فاتت بالورقة والقلم قبل التاسك</span>
+        <p>المحاضر لاحظ إن أسئلة كتيرة بتتكرر عن نقط اتشرحت فعلًا في السيشن السابقة. قبل ما تبدأ أي تاسك جديد، راجع محتوى السيشن اللي قبله كامل، لأن كل سيشن معتمد على اللي قبله بشكل مباشر، وأي فجوة في الفهم هتتراكم مع الوقت.</p>
+      </div>
+
+      <div class="box rule">
+        <span class="label">Checklist سريع قبل التسليم</span>
+        <p><strong>Inputs:</strong> Revenue · Cost of Sales · Gross Profit · Operating Profit · Net Profit · Current Assets · Current Liabilities · Inventory · Equity · Total Debt · Finance Costs · Operating Cash Flow · CapEx · Issued Shares · Par Value.<br><strong>Outputs:</strong> Current Ratio · Quick Ratio · Cash Ratio · Gross Margin · Net Margin · Debt-to-Equity · Interest Coverage · FCF · FCF Margin · Net Debt · Inventory Turnover · Book Value per Share · EPS · P/E · P/B · Earnings Quality · ROE.</p>
+      </div>
+
+      <h2 id="s26"><span class="n">26</span>تنبيهات على كلام المحاضر</h2>
+      <p>زي كل سيشن، دي مش تصحيح، لكن توضيح للأماكن اللي اتقالت بشكل تبسيطي:</p>
+
+      <div class="box caution">
+        <span class="label">كل الأرقام المرجعية في السيشن دي مرجعية تعليمية بس</span>
+        <p>Current Ratio = 2، Quick Ratio = 1، Interest Coverage = 5، P/E أقل من 10، P/B أقل من 3: كل رقم من دول اعتبره نقطة مرجعية جوه منهج الكورس، مش قانون عالمي ثابت لاتخاذ قرار استثماري فعلي. في التحليل الحقيقي، المرجع الأدق دايمًا هو مقارنة الشركة بالقطاع، بالشركات المشابهة، وباتجاهها التاريخي هي نفسها.</p>
+      </div>
+
+      <div class="box caution">
+        <span class="label">صيغة Inventory Turnover المستخدمة تبسيط</span>
+        <p>زي ما اتوضح في القسم الخاص بنسبة النشاط، الصيغة المستخدمة في الكورس (Sales ÷ Inventory) أبسط من الصيغة المحاسبية الأدق (COGS ÷ Average Inventory). استخدم صيغة الكورس في التاسك، لكن ماتاخدهاش كالصيغة الوحيدة الصحيحة في كل سياق.</p>
+      </div>
+
+      <h2 id="s27"><span class="n">27</span>خلاصة السيشن واللي جاي</h2>
+
+      <div class="box rule">
+        <span class="label">جوهر السيشن: من أرقام إلى قصة مالية</span>
+        <p>أنت مش بتعمل تحليل مالي عشان تطلع أرقام، أنت بتبني قصة مالية متكاملة للشركة. مثال على القصة: مبيعاتها بتزيد، هامش مجمل الربح مستقر، هامش صافي الربح بيتحسن، التدفق النقدي التشغيلي قوي، جودة الأرباح جيدة، الدين تحت السيطرة، تغطية الفوائد مرتفعة، التدفق النقدي الحر موجب، معدل دوران المخزون مستقر، العائد على حقوق الملكية جيد، لكن مكرر الربحية مرتفع مقارنة بالقطاع. هنا وصلت لمستوى تفكير مختلف تمامًا: مش بتقول "الشركة كويسة"، بتقول "الشركة ماليًا قوية، لكن السؤال دلوقتي هل سعر السوق بيعكس الجودة دي فعلًا، ولا السهم بقى مبالغ في تقييمه؟"</p>
+      </div>
+
+      <p>وده بالظبط الجسر اللي هننتقل بيه من <strong>Financial Analysis</strong> إلى <strong>Valuation & Stock Selection</strong>، ثم إلى المقارنة بين الشركات في نفس القطاع.</p>
+
+      <div class="flow-panels">
+        <div class="flow-panel">
+          <div class="panel-eyebrow">اتعملت النهارده</div>
+          <div class="panel-title">SESSION 03</div>
+          <div class="flow-steps">
+            <div class="flow-step hl">Liquidity, Profitability, Debt, Activity Ratios</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">Free Cash Flow & Net Debt</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">Book Value, EPS, P/E, P/B</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">ROE & Earnings Quality</div>
+          </div>
+        </div>
+
+        <div class="flow-panel">
+          <div class="panel-eyebrow">الجاي</div>
+          <div class="panel-title">SESSION 04 وما بعدها</div>
+          <div class="flow-steps">
+            <div class="flow-step hl">Initial Screening بالتفصيل</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">Peer & Sector Comparison</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">Valuation</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-step">Technical Analysis</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="session-nav">
+        <a href="index.html">← الرئيسية</a>
+        <a href="glossary.html">قاموس المصطلحات ↦</a>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<footer>
+  SESSION 03 · النسب المالية والتقييم وجودة الأرباح · دفتر بورصة شخصي متجدد
+</footer>
+
+<script src="interactions.js"></script>
+<script>
+  // تفعيل الرابط النشط في السايدبار حسب مكان التمرير
+  const links = document.querySelectorAll('.side-list a');
+  const sections = Array.from(links).map(l => document.querySelector(l.getAttribute('href')));
+  function setActiveLink(){
+    let idx = 0;
+    sections.forEach((sec, i) => {
+      if (sec && sec.getBoundingClientRect().top < 140) idx = i;
+    });
+    links.forEach(l => l.classList.remove('active'));
+    if (links[idx]) links[idx].classList.add('active');
+  }
+  window.addEventListener('scroll', setActiveLink);
+  setActiveLink();
+</script>
+
+</body>
+</html>
